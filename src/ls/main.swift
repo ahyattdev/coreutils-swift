@@ -90,9 +90,12 @@ for path in listPaths {
     fm.fileExistsAtPath(path, isDirectory: &isDirectory)
     if isDirectory {
         if listPaths.count > 1 {
-            print(fm.displayNameAtPath(path))
+            print(fm.displayNameAtPath(path) + ":")
         }
         list(path)
+        if listPaths.count > 1 && path != listPaths.last {
+            print("")
+        } 
     } else {
         print(columnLabel(path))
     }
