@@ -56,3 +56,6 @@ clean:
 
 set-path:
 	export PATH=$(BUILD_BIN_ROOT):$(PATH)
+
+test:
+	BUILD_BIN_ROOT=$(BUILD_BIN_ROOT) ./tests.sh
