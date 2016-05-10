@@ -37,7 +37,7 @@ cli.formatOutput = { s, type in
 let ignore = BoolOption(shortFlag: "i", longFlag: "ignore-enviornment", helpMessage: "Start with an empty enviornment")
 
 // TODO: Change short flag back to 0, CommandLine throws an assertion failure
-let null = BoolOption(shortFlag: "n", longFlag: "null", helpMessage: "End each output line with NUL, not newline")
+let null = BoolOption(shortFlag: "n", longFlag: "null", helpMessage: "End each output line with NUL, not newline. Should be changed to a short flag of 0 in the future.")
 
 let unset = MultiStringOption(shortFlag: "u", longFlag: "unset", helpMessage: "Remove variable from the enviornment")
 
@@ -63,15 +63,11 @@ struct Flags {
 if help.value {
     cli.printUsage()
     exit(0)
-} else if cli.unparsedArguments.count > 0 {
-    fputs("Invalid argument: \(cli.unparsedArguments[0])".red.bold + "\n", stderr)
-    cli.printUsage()
-    exit(1)
 }
 
 // Clear if necessary
 
-let envvars = NSProcessInfo.processInfo().environment
+var envvars = NSProcessInfo.processInfo().environment
 
 if Flags.Ignore {
     for var envvar in envvars {
@@ -79,8 +75,30 @@ if Flags.Ignore {
     }
 }
 
+// Set enviornmental variables that the user specified
+
+var command = ""
+
+for arg : String in cli.unparsedArguments {
+    // TODO: Check that the env var is more valid
+    if arg.componentsSeparatedByString("=").count == 2  && command.isEmpty {
+        setenv(arg.componentsSeparatedByString("=")[0], arg.componentsSeparatedByString("=")[1], 1)
+    } else {
+        command += arg + ""
+    }
+    
+    if !command.isEmpty {
+        exit(system(command))
+    }
+}
+
+// TODO: Sort them alphabetically
 for env in NSProcessInfo.processInfo().environment {
-    print(env.0.green + "=".cyan + env.1.magenta)
+    var seperator = "\n"
+    if Flags.Null {
+        seperator = "\0"
+    }
+    print(env.0.green + "=".cyan + env.1.magenta, separator: "", terminator: seperator)
 }
 
 exit(0)
