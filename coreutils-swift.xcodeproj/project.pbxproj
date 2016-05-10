@@ -9,6 +9,21 @@
 /* Begin PBXBuildFile section */
 		6A39DB6B1CE159900040DDAB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A39DB5E1CE14CCD0040DDAB /* main.swift */; };
 		6A39DB6C1CE159900040DDAB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB535351CDE8A7A0086552A /* main.swift */; };
+		6A39DB751CE15FF70040DDAB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A39DB741CE15FF70040DDAB /* main.swift */; };
+		6A39DB761CE160800040DDAB /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB535221CDE8A7A0086552A /* CommandLine.swift */; };
+		6A39DB771CE160800040DDAB /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB535231CDE8A7A0086552A /* Option.swift */; };
+		6A39DB781CE160800040DDAB /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB535241CDE8A7A0086552A /* StringExtensions.swift */; };
+		6A39DB791CE160880040DDAB /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB535261CDE8A7A0086552A /* BackgroundColor.swift */; };
+		6A39DB7A1CE160880040DDAB /* CodesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB535271CDE8A7A0086552A /* CodesParser.swift */; };
+		6A39DB7B1CE160880040DDAB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB535281CDE8A7A0086552A /* Color.swift */; };
+		6A39DB7C1CE160880040DDAB /* ControlCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB535291CDE8A7A0086552A /* ControlCode.swift */; };
+		6A39DB7D1CE160880040DDAB /* ModesExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB5352A1CDE8A7A0086552A /* ModesExtractor.swift */; };
+		6A39DB7E1CE160880040DDAB /* OutputTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB5352B1CDE8A7A0086552A /* OutputTarget.swift */; };
+		6A39DB7F1CE160880040DDAB /* Rainbow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB5352C1CDE8A7A0086552A /* Rainbow.swift */; };
+		6A39DB801CE160880040DDAB /* String+Rainbow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB5352D1CDE8A7A0086552A /* String+Rainbow.swift */; };
+		6A39DB811CE160880040DDAB /* StringGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB5352E1CDE8A7A0086552A /* StringGenerator.swift */; };
+		6A39DB821CE160880040DDAB /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB5352F1CDE8A7A0086552A /* Style.swift */; };
+		6A39DB831CE160880040DDAB /* XcodeColorsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB535301CDE8A7A0086552A /* XcodeColorsSupport.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +41,7 @@
 /* Begin PBXFileReference section */
 		6A39DB5E1CE14CCD0040DDAB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		6A39DB631CE159840040DDAB /* blank */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = blank; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A39DB741CE15FF70040DDAB /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		6AB535181CDE8A7A0086552A /* ls */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ls; sourceTree = "<group>"; };
 		6AB5351A1CDE8A7A0086552A /* CommandLine.swiftdoc */ = {isa = PBXFileReference; lastKnownFileType = file; path = CommandLine.swiftdoc; sourceTree = "<group>"; };
 		6AB5351B1CDE8A7A0086552A /* CommandLine.swiftmodule */ = {isa = PBXFileReference; lastKnownFileType = file; path = CommandLine.swiftmodule; sourceTree = "<group>"; };
@@ -77,6 +93,14 @@
 				6A39DB631CE159840040DDAB /* blank */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		6A39DB731CE15FF70040DDAB /* uname */ = {
+			isa = PBXGroup;
+			children = (
+				6A39DB741CE15FF70040DDAB /* main.swift */,
+			);
+			path = uname;
 			sourceTree = "<group>";
 		};
 		6AB5350B1CDE8A5C0086552A = {
@@ -160,6 +184,7 @@
 		6AB535321CDE8A7A0086552A /* src */ = {
 			isa = PBXGroup;
 			children = (
+				6A39DB731CE15FF70040DDAB /* uname */,
 				6A39DB5D1CE14CCD0040DDAB /* whoami */,
 				6AB535341CDE8A7A0086552A /* ls */,
 				6AB535361CDE8ABB0086552A /* CLI.swift */,
@@ -271,8 +296,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A39DB831CE160880040DDAB /* XcodeColorsSupport.swift in Sources */,
+				6A39DB781CE160800040DDAB /* StringExtensions.swift in Sources */,
 				6A39DB6B1CE159900040DDAB /* main.swift in Sources */,
+				6A39DB7C1CE160880040DDAB /* ControlCode.swift in Sources */,
+				6A39DB801CE160880040DDAB /* String+Rainbow.swift in Sources */,
 				6A39DB6C1CE159900040DDAB /* main.swift in Sources */,
+				6A39DB771CE160800040DDAB /* Option.swift in Sources */,
+				6A39DB7E1CE160880040DDAB /* OutputTarget.swift in Sources */,
+				6A39DB821CE160880040DDAB /* Style.swift in Sources */,
+				6A39DB751CE15FF70040DDAB /* main.swift in Sources */,
+				6A39DB7F1CE160880040DDAB /* Rainbow.swift in Sources */,
+				6A39DB761CE160800040DDAB /* CommandLine.swift in Sources */,
+				6A39DB811CE160880040DDAB /* StringGenerator.swift in Sources */,
+				6A39DB791CE160880040DDAB /* BackgroundColor.swift in Sources */,
+				6A39DB7D1CE160880040DDAB /* ModesExtractor.swift in Sources */,
+				6A39DB7A1CE160880040DDAB /* CodesParser.swift in Sources */,
+				6A39DB7B1CE160880040DDAB /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
