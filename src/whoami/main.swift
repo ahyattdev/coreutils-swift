@@ -24,7 +24,7 @@ cli.formatOutput = { s, type in
     return cli.defaultFormat(str, type: type)
 }
 
-let help = BoolOption(shortFlag: "H", longFlag: "help",
+let help = BoolOption(shortFlag: "h", longFlag: "help",
                       helpMessage: "Display this help and exit")
 
 cli.addOptions(help)
@@ -50,10 +50,10 @@ let pwuid = getpwuid(getuid())
 let userString = String.fromCString(pwuid.memory.pw_name)
 
 guard let userString = String.fromCString(pwuid.memory.pw_name) else {
-    print("Error: could not get username".red.bold)
+    fputs("Error: could not get username".red.bold, stderr)
     exit(1)
 }
 
-print(userString)
+print(userString.green.bold)
 
 exit(0)
