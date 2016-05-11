@@ -17,4 +17,4 @@ It is dependent on the `Foundation` and `Darwin` or `Glibc` swift modules
 
 ## How to contribute
 
-See [CONTRIBUTING.md](https://github.com/ahscpc/coreutils-swift/blob/master/CONTRIBUTING.md)
+See [CONTRIBUTING.md](CONTRIBUTING.md)
