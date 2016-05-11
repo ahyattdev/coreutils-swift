@@ -3,11 +3,16 @@
 ## Adding new commands
 
 1. Create a new file in Xcode of the type `Swift`
+
 ..* Put it in the folder `src/<command name>`
-..* Name the file `main.m`
-..* Check the checkbox for the `blank` target, this is to enable code completion in Xcode
-2. Edit `Makefile`, add your command to the line starting with `BINARIES` with all the other commands
-3. Copy over the template below and add your functionality to it
+
+..* Name the file `main.swift`
+
+..* Check the checkbox for membership in the `blank` target while creating the file, this is to enable code completion in Xcode
+
+2. Edit `Makefile` and add your command to the line starting with `BINARIES` with all the other commands
+
+3. Copy over the template below to your `main.swift` and add your functionality to it
 
 ## How to use Xcode with this project
 
