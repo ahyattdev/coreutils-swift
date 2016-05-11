@@ -1,7 +1,7 @@
 # coreutils-swift
 A work-in-progress project of rewriting the GNU Core Utilities in Swift
 
-It is dependent on the `Foundation` and `Darwin` or `Glibc` swift modules
+It is dependent on the `Foundation` and the `Darwin` or the `Glibc` Swift modules
 
 ## Commands that we have worked on
 | Tool      | Completion    |
