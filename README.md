@@ -6,11 +6,15 @@ It is dependent on the `Foundation` and `Darwin` or `Glibc` swift modules
 ## Commands that we have worked on
 | Tool      | Completion    |
 | --------- | ------------- |
-| env       | *Done*        |
+| env       | **Done**      |
 | ls        | 10 %          |
 | uname     | 10 %          |
-| whoami    | *Done*        |
+| whoami    | **Done**      |
 
 ## Commands that we have not started working on
 
 [Wikipedia list of GNU Core Utilities commands](https://en.wikipedia.org/wiki/GNU_Core_Utilities#Capabilities)
+
+## How to contribute
+
+See [CONTRIBUTING.md](https://github.com/ahscpc/coreutils-swift/blob/master/README.md)

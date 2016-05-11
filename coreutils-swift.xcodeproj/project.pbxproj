@@ -40,17 +40,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6A295E5C1CE2AD420021075F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6A295E5D1CE2AFA60021075F /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
 		6A39DB5E1CE14CCD0040DDAB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		6A39DB631CE159840040DDAB /* blank */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = blank; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A39DB631CE159840040DDAB /* blank */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = blank; path = "/Users/andyhyatt/src/coreutils-swift/build/Debug/blank"; sourceTree = "<absolute>"; };
 		6A39DB741CE15FF70040DDAB /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		6A9A638A1CE17D06006F6776 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = env/main.swift; sourceTree = "<group>"; };
-		6AB535181CDE8A7A0086552A /* ls */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ls; sourceTree = "<group>"; };
-		6AB5351A1CDE8A7A0086552A /* CommandLine.swiftdoc */ = {isa = PBXFileReference; lastKnownFileType = file; path = CommandLine.swiftdoc; sourceTree = "<group>"; };
-		6AB5351B1CDE8A7A0086552A /* CommandLine.swiftmodule */ = {isa = PBXFileReference; lastKnownFileType = file; path = CommandLine.swiftmodule; sourceTree = "<group>"; };
-		6AB5351C1CDE8A7A0086552A /* libCommandLine.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libCommandLine.dylib; sourceTree = "<group>"; };
-		6AB5351D1CDE8A7A0086552A /* libRainbow.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libRainbow.dylib; sourceTree = "<group>"; };
-		6AB5351E1CDE8A7A0086552A /* Rainbow.swiftdoc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rainbow.swiftdoc; sourceTree = "<group>"; };
-		6AB5351F1CDE8A7A0086552A /* Rainbow.swiftmodule */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rainbow.swiftmodule; sourceTree = "<group>"; };
 		6AB535221CDE8A7A0086552A /* CommandLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
 		6AB535231CDE8A7A0086552A /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
 		6AB535241CDE8A7A0086552A /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -97,14 +92,6 @@
 			path = whoami;
 			sourceTree = "<group>";
 		};
-		6A39DB641CE159840040DDAB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6A39DB631CE159840040DDAB /* blank */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		6A39DB731CE15FF70040DDAB /* uname */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,42 +103,12 @@
 		6AB5350B1CDE8A5C0086552A = {
 			isa = PBXGroup;
 			children = (
+				6A295E5D1CE2AFA60021075F /* CONTRIBUTING.md */,
+				6A295E5C1CE2AD420021075F /* README.md */,
+				6AB535311CDE8A7A0086552A /* Makefile */,
 				6AB535321CDE8A7A0086552A /* src */,
 				6AB535201CDE8A7A0086552A /* lib */,
-				6AB535311CDE8A7A0086552A /* Makefile */,
-				6AB535161CDE8A7A0086552A /* build */,
-				6A39DB641CE159840040DDAB /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		6AB535161CDE8A7A0086552A /* build */ = {
-			isa = PBXGroup;
-			children = (
-				6AB535171CDE8A7A0086552A /* bin */,
-				6AB535191CDE8A7A0086552A /* lib */,
-			);
-			path = build;
-			sourceTree = "<group>";
-		};
-		6AB535171CDE8A7A0086552A /* bin */ = {
-			isa = PBXGroup;
-			children = (
-				6AB535181CDE8A7A0086552A /* ls */,
-			);
-			path = bin;
-			sourceTree = "<group>";
-		};
-		6AB535191CDE8A7A0086552A /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				6AB5351A1CDE8A7A0086552A /* CommandLine.swiftdoc */,
-				6AB5351B1CDE8A7A0086552A /* CommandLine.swiftmodule */,
-				6AB5351C1CDE8A7A0086552A /* libCommandLine.dylib */,
-				6AB5351D1CDE8A7A0086552A /* libRainbow.dylib */,
-				6AB5351E1CDE8A7A0086552A /* Rainbow.swiftdoc */,
-				6AB5351F1CDE8A7A0086552A /* Rainbow.swiftmodule */,
-			);
-			path = lib;
 			sourceTree = "<group>";
 		};
 		6AB535201CDE8A7A0086552A /* lib */ = {
@@ -228,20 +185,6 @@
 			passBuildSettingsInEnvironment = 0;
 			productName = "coreutils-swift";
 		};
-		6AB535371CDE8E320086552A /* ls */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = ls;
-			buildConfigurationList = 6AB535381CDE8E320086552A /* Build configuration list for PBXLegacyTarget "ls" */;
-			buildPhases = (
-			);
-			buildToolPath = /usr/bin/make;
-			buildWorkingDirectory = "";
-			dependencies = (
-			);
-			name = ls;
-			passBuildSettingsInEnvironment = 0;
-			productName = ls;
-		};
 /* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
@@ -278,9 +221,6 @@
 					6AB535101CDE8A5C0086552A = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
-					6AB535371CDE8E320086552A = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
 				};
 			};
 			buildConfigurationList = 6AB5350F1CDE8A5C0086552A /* Build configuration list for PBXProject "coreutils-swift" */;
@@ -291,12 +231,11 @@
 				en,
 			);
 			mainGroup = 6AB5350B1CDE8A5C0086552A;
-			productRefGroup = 6A39DB641CE159840040DDAB /* Products */;
+			productRefGroup = 6AB5350B1CDE8A5C0086552A;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				6AB535101CDE8A5C0086552A /* coreutils-swift */,
-				6AB535371CDE8E320086552A /* ls */,
 				6A39DB621CE159840040DDAB /* blank */,
 			);
 		};
@@ -450,29 +389,6 @@
 			};
 			name = Release;
 		};
-		6AB535391CDE8E320086552A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEBUGGING_SYMBOLS = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		6AB5353A1CDE8E320086552A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -499,15 +415,6 @@
 			buildConfigurations = (
 				6AB535141CDE8A5C0086552A /* Debug */,
 				6AB535151CDE8A5C0086552A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6AB535381CDE8E320086552A /* Build configuration list for PBXLegacyTarget "ls" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6AB535391CDE8E320086552A /* Debug */,
-				6AB5353A1CDE8E320086552A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
