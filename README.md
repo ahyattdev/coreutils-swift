@@ -9,6 +9,7 @@ It is dependent on the `Foundation` and the `Darwin` or the `Glibc` Swift module
 | env       | **Done**      |
 | ls        | 10 %          |
 | uname     | 10 %          |
+| sleep	    | **Done**      |
 | whoami    | **Done**      |
 
 ## Commands that we have not started working on
