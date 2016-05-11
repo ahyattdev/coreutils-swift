@@ -4,11 +4,11 @@
 
 1. Create a new file in Xcode of the type `Swift`
 
-..* Put it in the folder `src/<command name>`
+    * Put it in the folder `src/<command name>`
 
-..* Name the file `main.swift`
+    * Name the file `main.swift`
 
-..* Check the checkbox for membership in the `blank` target while creating the file, this is to enable code completion in Xcode
+    * Check the checkbox for membership in the `blank` target while creating the file, this is to enable code completion in Xcode
 
 2. Edit `Makefile` and add your command to the line starting with `BINARIES` with all the other commands
 
@@ -89,4 +89,3 @@ fputs("Print text to stderr this way", stderr)
 // but it is included for clarity
 
 exit(0)
-```
