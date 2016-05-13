@@ -26,6 +26,7 @@ cli.formatOutput = { s, type in
     return cli.defaultFormat(str, type: type)
 }
 
+
 // Add additional options here
 let description = "Format: sleep <duration>[s|m|h|d]\ns: Seconds\nm: Minutes\nh: Hours\nd: Days".green
 

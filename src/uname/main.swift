@@ -1,5 +1,7 @@
 import CommandLine
 
+import Foundation
+
 #if os(OSX)
     import Darwin
 #elseif os(Linux)
@@ -56,11 +58,11 @@ do {
 
 if help.value {
     cli.printUsage()
-    exit(0)
+    exit(EX_OK)
 } else if cli.unparsedArguments.count > 0 {
     fputs("Invalid argument: \(cli.unparsedArguments[0])".red.bold + "\n", stderr)
     cli.printUsage()
-    exit(1)
+    exit(EX_USAGE)
 }
 
 struct Options {
@@ -75,6 +77,7 @@ struct Options {
     static var OS = os.value
 }
 
+// Configure -a
 if Options.All {
     Options.Kernel = true
     Options.Nodename = true
@@ -86,9 +89,76 @@ if Options.All {
     Options.OS = true
 }
 
-// TODO: Do this dynamically
-if Options.OS {
-    print("Darwin".green.bold, separator: "")
+// Default to -s
+if !(Options.Kernel || Options.Nodename || Options.Release || Options.Version || Options.Machine || Options.Processor || Options.Hardware || Options.OS) {
+    Options.Kernel = true
 }
 
-exit(0)
+// Stores the final info string to be printed
+var info = ""
+
+// Just adds the string to info and appends a space
+// The point is to cut down on repetetive code
+func addInfo(str: String) {
+    info += str + " ".green.bold
+}
+
+let pi = NSProcessInfo.processInfo()
+var unameInfo: utsname = utsname()
+uname(&unameInfo)
+
+if Options.Kernel {
+    guard let kernelName = withUnsafePointer(&unameInfo.sysname, {
+        String.fromCString(UnsafePointer($0))
+    }) else {
+        fputs("Failed to get the kernel name\n", stderr)
+        exit(EX_OSERR)
+    }
+    addInfo(kernelName)
+}
+
+if Options.Nodename {
+    guard let hostname = NSHost.currentHost().localizedName else {
+        fputs("Failed to get the network node name\n", stderr)
+        exit(EX_OSERR)
+    }
+    addInfo(hostname)
+}
+
+if Options.Release {
+    guard let kernelRelease = withUnsafePointer(&unameInfo.release, {
+        String.fromCString(UnsafePointer($0))
+    }) else {
+        fputs("Failed to get the kernel release\n", stderr)
+        exit(EX_OSERR)
+    }
+    addInfo(kernelRelease)
+}
+
+if Options.Version {
+    guard let kernelVersion = withUnsafePointer(&unameInfo.version, {
+        String.fromCString(UnsafePointer($0))
+    }) else {
+        fputs("Failed to get the kernel version\n", stderr)
+        exit(EX_OSERR)
+    }
+    addInfo(kernelVersion)
+}
+
+if Options.Machine {
+    guard let machine = withUnsafePointer(&unameInfo.machine, {
+        String.fromCString(UnsafePointer($0))
+    }) else {
+        fputs("Failed to get the machine\n", stderr)
+        exit(EX_OSERR)
+    }
+    addInfo(machine)
+}
+
+if Options.OS {
+    addInfo(pi.operatingSystemName())
+}
+
+print(info)
+
+exit(EX_OK)
