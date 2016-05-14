@@ -24,6 +24,8 @@
 		6A39DB811CE160880040DDAB /* StringGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB5352E1CDE8A7A0086552A /* StringGenerator.swift */; };
 		6A39DB821CE160880040DDAB /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB5352F1CDE8A7A0086552A /* Style.swift */; };
 		6A39DB831CE160880040DDAB /* XcodeColorsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB535301CDE8A7A0086552A /* XcodeColorsSupport.swift */; };
+		6A8318041CE7E45A00372B54 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8318031CE7E45A00372B54 /* main.swift */; };
+		6A8318061CE7E4F400372B54 /* WCOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8318051CE7E4F400372B54 /* WCOptions.swift */; };
 		6A99C0971CE3F4BC0011F3F1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A99C0961CE3F4BC0011F3F1 /* main.swift */; };
 		6A9A638B1CE17D06006F6776 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9A638A1CE17D06006F6776 /* main.swift */; };
 /* End PBXBuildFile section */
@@ -45,7 +47,9 @@
 		6A295E5D1CE2AFA60021075F /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
 		6A39DB5E1CE14CCD0040DDAB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		6A39DB741CE15FF70040DDAB /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		6A99C0941CE3F4970011F3F1 /* blank */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = blank; path = "/Users/andyhyatt/src/coreutils-swift/build/Debug/blank"; sourceTree = "<absolute>"; };
+		6A8318011CE7BD9B00372B54 /* blank */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = blank; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A8318031CE7E45A00372B54 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = wc/main.swift; sourceTree = "<group>"; };
+		6A8318051CE7E4F400372B54 /* WCOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WCOptions.swift; path = wc/WCOptions.swift; sourceTree = "<group>"; };
 		6A99C0961CE3F4BC0011F3F1 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		6A9A638A1CE17D06006F6776 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = env/main.swift; sourceTree = "<group>"; };
 		6AB535221CDE8A7A0086552A /* CommandLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
@@ -102,6 +106,15 @@
 			path = uname;
 			sourceTree = "<group>";
 		};
+		6A8318021CE7E3F300372B54 /* wc */ = {
+			isa = PBXGroup;
+			children = (
+				6A8318031CE7E45A00372B54 /* main.swift */,
+				6A8318051CE7E4F400372B54 /* WCOptions.swift */,
+			);
+			name = wc;
+			sourceTree = "<group>";
+		};
 		6A99C0951CE3F4BC0011F3F1 /* sleep */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +131,7 @@
 				6AB535311CDE8A7A0086552A /* Makefile */,
 				6AB535321CDE8A7A0086552A /* src */,
 				6AB535201CDE8A7A0086552A /* lib */,
+				6A8318011CE7BD9B00372B54 /* blank */,
 			);
 			sourceTree = "<group>";
 		};
@@ -161,6 +175,7 @@
 		6AB535321CDE8A7A0086552A /* src */ = {
 			isa = PBXGroup;
 			children = (
+				6A8318021CE7E3F300372B54 /* wc */,
 				6A1F17CB1CE17BD900C79BCF /* env */,
 				6AB535341CDE8A7A0086552A /* ls */,
 				6A99C0951CE3F4BC0011F3F1 /* sleep */,
@@ -213,7 +228,7 @@
 			);
 			name = blank;
 			productName = blank;
-			productReference = 6A99C0941CE3F4970011F3F1 /* blank */;
+			productReference = 6A8318011CE7BD9B00372B54 /* blank */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -261,8 +276,10 @@
 				6A39DB781CE160800040DDAB /* StringExtensions.swift in Sources */,
 				6A9A638B1CE17D06006F6776 /* main.swift in Sources */,
 				6A39DB6B1CE159900040DDAB /* main.swift in Sources */,
+				6A8318061CE7E4F400372B54 /* WCOptions.swift in Sources */,
 				6A39DB7C1CE160880040DDAB /* ControlCode.swift in Sources */,
 				6A39DB801CE160880040DDAB /* String+Rainbow.swift in Sources */,
+				6A8318041CE7E45A00372B54 /* main.swift in Sources */,
 				6A39DB6C1CE159900040DDAB /* main.swift in Sources */,
 				6A39DB771CE160800040DDAB /* Option.swift in Sources */,
 				6A39DB7E1CE160880040DDAB /* OutputTarget.swift in Sources */,

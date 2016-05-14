@@ -89,3 +89,4 @@ fputs("Print text to stderr this way", stderr)
 // but it is included for clarity
 
 exit(0)
+```
