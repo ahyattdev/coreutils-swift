@@ -54,15 +54,19 @@ do {
 if help.value {
     cli.printUsage()
     exit(EX_OK)
-} else if cli.unparsedArguments.count > 0 {
-    // Remove this if block if the command will use extra arguments
-    print("Invalid argument: \(cli.unparsedArguments[0])".red.bold + "\n")
-    cli.printUsage()
-    // Exit with a code > 0 to indicate that an error occured
-    exit(EX_USAGE)
 }
 
 // Most program logic will go after here
+
+func countNewlines(string: String) -> Int {
+    var count: Int = 0
+    for character in string.utf16 {
+        if NSCharacterSet.newlineCharacterSet().characterIsMember(character) {
+            count += 1
+        }
+    }
+    return count
+}
 
 let fm = NSFileManager.defaultManager()
 
@@ -72,26 +76,85 @@ WCOptions.LineCount = lineCount.value
 WCOptions.LongestLine = longestLine.value
 WCOptions.WordCount = wordCount.value
 
+if !(WCOptions.ByteCount || WCOptions.CharCount || WCOptions.LineCount || WCOptions.LongestLine || WCOptions.WordCount) {
+    WCOptions.ByteCount = true
+    WCOptions.LineCount = true
+    WCOptions.WordCount = true
+}
+
+// TODO: Handle a tie for the longest line
+var longest = (count: 0, lineNumber: -1, fileName: "")
+
+var total = (chars: 0, lines: 0, words: 0, bytes: 0)
+
 for fileName in cli.unparsedArguments {
     guard fm.fileExistsAtPath(fileName) else {
-        fputs("wc: \(fileName): No such file or directory\n".red.bold, stderr)
+        fputs("wc: \(fileName): No such file or directory".red.bold + "\n", stderr)
         break
     }
     
     guard fm.isReadableFileAtPath(fileName) else {
-        fputs("wc: \(fileName): Permission denied\n".red.bold, stderr)
+        fputs("wc: \(fileName): Permission denied".red.bold + "\n", stderr)
         break
     }
     
     // TODO: Dynamically determine the encoding
-    guard let contents = fm.contentsAtPath(fileName) else {
-        fputs("wc: \(fileName): Failed to load contents of file\n".red.bold, stderr)
+    guard let data = fm.contentsAtPath(fileName),
+        let contents = String(data: data, encoding: NSUTF8StringEncoding) else {
+            
+        fputs("wc: \(fileName): Failed to load contents of file".red.bold + "\n", stderr)
         break
     }
     
-    let str: String = String(bytes: contents., encoding: NSUTF8StringEncoding)
+    let byteCountForFile = data.length
+    let charCountForFile = contents.characters.count
+    let lineCountForFile = countNewlines(contents)
+    let wordCountForFile = contents.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).count
+    
+    total.bytes += byteCountForFile
+    total.chars += charCountForFile
+    total.lines += lineCountForFile
+    total.words += wordCountForFile
+        
+    // TODO: Clean up this formatting
+    var output = ""
+    if WCOptions.CharCount {
+        output += "\(charCountForFile) ".blue
+    }
+    if WCOptions.LineCount {
+        output += "\(lineCountForFile) ".yellow
+    }
+    if WCOptions.WordCount {
+        output += "\(wordCountForFile) ".cyan
+    }
+    if WCOptions.ByteCount {
+        output += "\(byteCountForFile) ".green
+    }
+    if cli.unparsedArguments.count > 1 {
+        output += fileName.magenta
+    }
+    
+    print(output) 
 }
 
+// Print the total if there are more than one files
+if cli.unparsedArguments.count > 1 {
+    var output = ""
+    if WCOptions.CharCount {
+        output += "\(total.chars) ".blue
+    }
+    if WCOptions.LineCount {
+        output += "\(total.lines) ".yellow
+    }
+    if WCOptions.WordCount {
+        output += "\(total.words) ".cyan
+    }
+    if WCOptions.ByteCount {
+        output += "\(total.bytes) ".green
+    }
+    output += "total".lightMagenta
+    print(output)
+}
 
 // This is unecessary because the compiler adds it automatically,
 // but it is included for clarity

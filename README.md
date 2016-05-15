@@ -10,6 +10,7 @@ It is dependent on the `Foundation` and the `Darwin` or the `Glibc` Swift module
 | ls        | 10 %          |
 | uname     | 90 %          |
 | sleep	    | **Done**      |
+| wc        | 90 %          |
 | whoami    | **Done**      |
 
 ## Commands that we have not started working on
