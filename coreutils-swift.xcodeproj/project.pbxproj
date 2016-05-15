@@ -28,6 +28,7 @@
 		6A8318061CE7E4F400372B54 /* WCOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8318051CE7E4F400372B54 /* WCOptions.swift */; };
 		6A99C0971CE3F4BC0011F3F1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A99C0961CE3F4BC0011F3F1 /* main.swift */; };
 		6A9A638B1CE17D06006F6776 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9A638A1CE17D06006F6776 /* main.swift */; };
+		6ABA03A41CE8312B002A3C9E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABA03A31CE8312B002A3C9E /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -69,6 +70,7 @@
 		6AB535311CDE8A7A0086552A /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; usesTabs = 1; };
 		6AB535351CDE8A7A0086552A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		6AB535361CDE8ABB0086552A /* CLI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLI.swift; sourceTree = "<group>"; };
+		6ABA03A31CE8312B002A3C9E /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = echo/main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 		6AB535321CDE8A7A0086552A /* src */ = {
 			isa = PBXGroup;
 			children = (
+				6ABA03A21CE83110002A3C9E /* echo */,
 				6A8318021CE7E3F300372B54 /* wc */,
 				6A1F17CB1CE17BD900C79BCF /* env */,
 				6AB535341CDE8A7A0086552A /* ls */,
@@ -192,6 +195,14 @@
 				6AB535351CDE8A7A0086552A /* main.swift */,
 			);
 			path = ls;
+			sourceTree = "<group>";
+		};
+		6ABA03A21CE83110002A3C9E /* echo */ = {
+			isa = PBXGroup;
+			children = (
+				6ABA03A31CE8312B002A3C9E /* main.swift */,
+			);
+			name = echo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +301,7 @@
 				6A39DB811CE160880040DDAB /* StringGenerator.swift in Sources */,
 				6A39DB791CE160880040DDAB /* BackgroundColor.swift in Sources */,
 				6A99C0971CE3F4BC0011F3F1 /* main.swift in Sources */,
+				6ABA03A41CE8312B002A3C9E /* main.swift in Sources */,
 				6A39DB7D1CE160880040DDAB /* ModesExtractor.swift in Sources */,
 				6A39DB7A1CE160880040DDAB /* CodesParser.swift in Sources */,
 				6A39DB7B1CE160880040DDAB /* Color.swift in Sources */,
