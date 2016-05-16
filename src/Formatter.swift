@@ -1,5 +1,3 @@
-import Foundation
-
 #if os(OSX)
     import Darwin
 #elseif os(Linux)
@@ -17,9 +15,12 @@ class Formatter {
     func columnsRepresentation() -> String {
         var representation = ""
         
-        var size: winsize
+        // With Swift 3 we will be able to use ioctl()
+        // It is a variadic function and Swift 2.2 does not support it
+        var size: winsize = winsize()
+        size.ws_row = 25
+        size.ws_col = 80
         
-        ioctl(STDOUT_FILENO, TIOCGWINSZ, &winsize)
         
         return representation
     }
