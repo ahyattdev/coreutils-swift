@@ -41,19 +41,19 @@ import CommandLine
 let cli = CommandLine()
 
 cli.formatOutput = { s, type in
-    var str: String
-    switch(type) {
-        case .Error:
-            str = s.red.bold
-        case .OptionFlag:
-            str = s.green.underline
-        case .OptionHelp:
-            str = s.blue
-        default:
-            str = s
-        }
+var str: String
+switch(type) {
+case .About:
+str = s.lightCyan + "\n\nThe description of the command goes here".yellow
+case .Error:
+str = s.red.bold
+case .OptionFlag:
+str = s.green.underline
+case .OptionHelp:
+str = s.lightBlue
+}
 
-    return cli.defaultFormat(str, type: type)
+return cli.defaultFormat(str, type: type)
 }
 
 // Add additional options here
