@@ -44,10 +44,10 @@ func columnLabel(path: String) -> String {
 func list(path: String) {
     do {
         let contents = try fm.contentsOfDirectoryAtPath(path)
-            
-        for file in contents {
-            print(columnLabel(file) + "\t")
-        }
+        
+        let formatter = Formatter(elements: contents)
+        
+        print(formatter.columnsRepresentation())
     } catch {
         print("error getting contents of directory")
         exit(2)
