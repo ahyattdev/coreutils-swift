@@ -1,4 +1,5 @@
 import Foundation
+import Rainbow
 
 #if os(OSX)
     import Darwin
