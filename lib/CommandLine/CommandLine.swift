@@ -85,7 +85,7 @@
      *   print("File type is \(type), files are \(cli.unparsedArguments)")
      * catch {
      *   cli.printUsage(error)
-     *   exit(EX_USAGE)
+     *   exit(EXIT_FAILURE)
      * }
      *
      * ---
@@ -517,7 +517,7 @@ public class CommandLine {
    *   print("File type is \(type), files are \(cli.unparsedArguments)")
    * catch {
    *   cli.printUsage(error)
-   *   exit(EX_USAGE)
+   *   exit(EXIT_FAILURE)
    * }
    *
    * ---

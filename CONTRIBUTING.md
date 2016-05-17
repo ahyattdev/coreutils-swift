@@ -66,18 +66,18 @@ do {
     try cli.parse(true)
 } catch {
     cli.printUsage(error)
-    exit(EX_USAGE)
+    exit(EXIT_FAILURE)
 }
 
 if help.value {
     cli.printUsage()
-    exit(0)
+    exit(EXIT_SUCCESS)
 } else if cli.unparsedArguments.count > 0 {
     // Remove this if block if the command will use extra arguments
     print("Invalid argument: \(cli.unparsedArguments[0])".red.bold + "\n")
     cli.printUsage()
     // Exit with a code > 0 to indicate that an error occured
-    exit(1)
+    exit(EXIT_FAILURE)
 }
 
 // Most program logic will go after here
@@ -88,5 +88,5 @@ fputs("Print text to stderr this way", stderr)
 // This is unecessary because the compiler adds it automatically,
 // but it is included for clarity
 
-exit(0)
+exit(EXIT_SUCCESS)
 ```

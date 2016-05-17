@@ -40,19 +40,19 @@ do {
 } catch {
     print(description)
     cli.printUsage(error)
-    exit(EX_USAGE)
+    exit(EXIT_FAILURE)
 }
 
 if help.value {
     print(description)
     cli.printUsage()
-    exit(0)
+    exit(EXIT_SUCCESS)
 } else if cli.unparsedArguments.count != 1 {
     fputs("sleep: No time specified".red.bold + "\n", stderr)
     print(description)
     cli.printUsage()
     // Exit with a code > 0 to indicate that an error occured
-    exit(1)
+    exit(EXIT_FAILURE)
 }
 
 // Multipliers
@@ -92,5 +92,5 @@ numericDuration *= unit.rawValue
 // System C library call
 sleep(numericDuration)
 
-exit(0)
+exit(EXIT_SUCCESS)
 

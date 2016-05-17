@@ -53,16 +53,16 @@ do {
     try cli.parse(true)
 } catch {
     cli.printUsage(error)
-    exit(EX_USAGE)
+    exit(EXIT_FAILURE)
 }
 
 if help.value {
     cli.printUsage()
-    exit(EX_OK)
+    exit(EXIT_SUCCESS)
 } else if cli.unparsedArguments.count > 0 {
     fputs("Invalid argument: \(cli.unparsedArguments[0])".red.bold + "\n", stderr)
     cli.printUsage()
-    exit(EX_USAGE)
+    exit(EXIT_FAILURE)
 }
 
 struct Options {
@@ -112,7 +112,7 @@ if Options.Kernel {
         String.fromCString(UnsafePointer($0))
     }) else {
         fputs("Failed to get the kernel name\n", stderr)
-        exit(EX_OSERR)
+        exit(EXIT_FAILURE)
     }
     addInfo(kernelName)
 }
@@ -120,7 +120,7 @@ if Options.Kernel {
 if Options.Nodename {
     guard let hostname = NSHost.currentHost().localizedName else {
         fputs("Failed to get the network node name\n", stderr)
-        exit(EX_OSERR)
+        exit(EXIT_FAILURE)
     }
     addInfo(hostname)
 }
@@ -130,7 +130,7 @@ if Options.Release {
         String.fromCString(UnsafePointer($0))
     }) else {
         fputs("Failed to get the kernel release\n", stderr)
-        exit(EX_OSERR)
+        exit(EXIT_FAILURE)
     }
     addInfo(kernelRelease)
 }
@@ -140,7 +140,7 @@ if Options.Version {
         String.fromCString(UnsafePointer($0))
     }) else {
         fputs("Failed to get the kernel version\n", stderr)
-        exit(EX_OSERR)
+        exit(EXIT_FAILURE)
     }
     addInfo(kernelVersion)
 }
@@ -150,7 +150,7 @@ if Options.Machine {
         String.fromCString(UnsafePointer($0))
     }) else {
         fputs("Failed to get the machine description\n", stderr)
-        exit(EX_OSERR)
+        exit(EXIT_FAILURE)
     }
     addInfo(machine)
 }
@@ -159,7 +159,7 @@ if Options.Processor {
     // TODO: Implement fetching the processor description
     guard let processor: String = "unimplemented" else {
         fputs("Failed to get the processor description\n", stderr)
-        exit(EX_OSERR)
+        exit(EXIT_FAILURE)
     }
 
     addInfo(processor)
@@ -175,7 +175,7 @@ if Options.Hardware {
         
         let name = String.fromCString(ai.memory.name) else {
         fputs("Failed to get the CPU type\n", stderr)
-        exit(EX_OSERR)
+        exit(EXIT_FAILURE)
     }
     addInfo(name)
 }
@@ -202,4 +202,4 @@ if Options.OS {
 
 print(info)
 
-exit(EX_OK)
+exit(EXIT_SUCCESS)

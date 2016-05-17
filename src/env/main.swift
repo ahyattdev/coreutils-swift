@@ -42,7 +42,7 @@ do {
     try cli.parse(true)
 } catch {
     cli.printUsage(error)
-    exit(EX_USAGE)
+    exit(EXIT_FAILURE)
 }
 
 struct Flags {
@@ -55,7 +55,7 @@ struct Flags {
 
 if help.value {
     cli.printUsage()
-    exit(0)
+    exit(EXIT_SUCCESS)
 }
 
 // Clear if necessary
@@ -94,4 +94,4 @@ for env in NSProcessInfo.processInfo().environment {
     print(env.0.green + "=".cyan + env.1.magenta, separator: "", terminator: seperator)
 }
 
-exit(0)
+exit(EXIT_SUCCESS)

@@ -34,16 +34,16 @@ do {
     try cli.parse(true)
 } catch {
     cli.printUsage(error)
-    exit(EX_USAGE)
+    exit(EXIT_FAILURE)
 }
 
 if help.value {
     cli.printUsage()
-    exit(0)
+    exit(EXIT_SUCCESS)
 } else if cli.unparsedArguments.count > 0 {
     print("Invalid argument: \(cli.unparsedArguments[0])".red.bold + "\n")
     cli.printUsage()
-    exit(1)
+    exit(EXIT_FAILURE)
 }
 
 let pwuid = getpwuid(getuid())
@@ -52,9 +52,9 @@ let userString = String.fromCString(pwuid.memory.pw_name)
 
 guard let userString = String.fromCString(pwuid.memory.pw_name) else {
     fputs("Error: could not get username".red.bold, stderr)
-    exit(1)
+    exit(EXIT_FAILURE)
 }
 
 print(userString.green.bold)
 
-exit(0)
+exit(EXIT_SUCCESS)

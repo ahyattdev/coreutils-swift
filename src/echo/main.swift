@@ -66,3 +66,5 @@ if !noNewline.value {
 }
 
 fputs(output, stdout)
+
+exit(EXIT_SUCCESS)

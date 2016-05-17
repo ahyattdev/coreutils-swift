@@ -49,12 +49,12 @@ do {
     try cli.parse(true)
 } catch {
     cli.printUsage(error)
-    exit(EX_USAGE)
+    exit(EXIT_FAILURE)
 }
 
 if help.value {
     cli.printUsage()
-    exit(EX_OK)
+    exit(EXIT_SUCCESS)
 }
 
 // Most program logic will go after here
@@ -160,4 +160,4 @@ if cli.unparsedArguments.count > 1 {
 // This is unecessary because the compiler adds it automatically,
 // but it is included for clarity
 
-exit(EX_OK)
+exit(EXIT_SUCCESS)

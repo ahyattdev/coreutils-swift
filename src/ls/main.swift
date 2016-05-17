@@ -69,7 +69,7 @@ do {
     try cli.parse(true)
 } catch {
     cli.printUsage(error)
-    exit(EX_USAGE)
+    exit(EXIT_FAILURE)
 }
 
 
@@ -97,7 +97,7 @@ if listPaths.count == 0 {
 for path in listPaths {
     guard fm.fileExistsAtPath(path) else {
         print("ls: no such path \(path)")
-        exit(1)
+        exit(EXIT_FAILURE)
     }
 }
 
@@ -117,4 +117,4 @@ for path in listPaths {
     }
 }
 
-exit(0)
+exit(EXIT_SUCCESS)
