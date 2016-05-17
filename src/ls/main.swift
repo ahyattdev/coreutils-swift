@@ -15,7 +15,23 @@ enum Mode {
     case Details
 }
 
-var cli = CLI()
+let cli = CommandLine()
+
+cli.formatOutput = { s, type in
+    var str: String
+    switch(type) {
+    case .Error:
+        str = s.red.bold
+    case .OptionFlag:
+        str = s.green.underline
+    case .OptionHelp:
+        str = s.blue
+    default:
+        str = s
+    }
+    
+    return cli.defaultFormat(str, type: type)
+}
 
 let showDotFiles = BoolOption(shortFlag: "a", longFlag: "all",
                               helpMessage: "Do not ignore dotfiles")
@@ -35,7 +51,7 @@ let help = BoolOption(shortFlag: "H", longFlag: "help",
 
 cli.addOptions(showDotFiles, showDotFilesWithoutImplied, humanReadable, showColumns, showDetails, help)
 
-cli.safeParse()
+
 
 func columnLabel(path: String) -> String {
     return fm.displayNameAtPath(path)
@@ -54,14 +70,19 @@ func list(path: String) {
     }
 }
 
-
+do {
+    try cli.parse(true)
+} catch {
+    cli.printUsage(error)
+    exit(EX_USAGE)
+}
 
 
 var mode : Mode
 
 if help.value {
     cli.printUsage()
-    exit(0)
+    exit(EXIT_SUCCESS)
 }
 
 if showColumns.value {

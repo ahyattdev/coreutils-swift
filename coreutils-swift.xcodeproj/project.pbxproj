@@ -71,7 +71,6 @@
 		6AB535301CDE8A7A0086552A /* XcodeColorsSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeColorsSupport.swift; sourceTree = "<group>"; };
 		6AB535311CDE8A7A0086552A /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; usesTabs = 1; };
 		6AB535351CDE8A7A0086552A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		6AB535361CDE8ABB0086552A /* CLI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLI.swift; sourceTree = "<group>"; };
 		6ABA03A31CE8312B002A3C9E /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = echo/main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,7 +185,6 @@
 				6A99C0951CE3F4BC0011F3F1 /* sleep */,
 				6A39DB731CE15FF70040DDAB /* uname */,
 				6A39DB5D1CE14CCD0040DDAB /* whoami */,
-				6AB535361CDE8ABB0086552A /* CLI.swift */,
 				6A7A8E411CE907C3003A1801 /* Formatter.swift */,
 			);
 			path = src;
