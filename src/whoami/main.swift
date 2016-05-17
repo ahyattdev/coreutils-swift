@@ -1,6 +1,7 @@
 import CommandLine
+import Rainbow
 
-#if os(OSX)
+#if os(OSX) || os(iOS)
     import Darwin
 #elseif os(Linux)
     import Glibc

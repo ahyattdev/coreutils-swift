@@ -1,11 +1,6 @@
 import Foundation
 import CommandLine
-
-//#if os(OSX)
-//    import Darwin
-//#elseif os(Linux)
-//    import Glibc
-//#endif
+import Rainbow
 
 let fm = NSFileManager.defaultManager()
 

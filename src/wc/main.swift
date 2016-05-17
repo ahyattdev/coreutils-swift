@@ -1,11 +1,12 @@
 // Remove this if your command will not use Foundation
 import Foundation
+import Rainbow
 
 // Used for parsing arguments
 import CommandLine
 
 // The system C library
-#if os(OSX)
+#if os(OSX) || os(iOS)
     import Darwin
 #elseif os(Linux)
     import Glibc
