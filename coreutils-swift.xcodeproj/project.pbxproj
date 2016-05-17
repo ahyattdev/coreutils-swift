@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6A0F5B2C1CE8BEA6001B8D7A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABA03A31CE8312B002A3C9E /* main.swift */; };
+		6A1CB5B01CEBD88900047414 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1CB5AF1CEBD88900047414 /* main.swift */; };
 		6A39DB6B1CE159900040DDAB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A39DB5E1CE14CCD0040DDAB /* main.swift */; };
 		6A39DB6C1CE159900040DDAB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB535351CDE8A7A0086552A /* main.swift */; };
 		6A39DB751CE15FF70040DDAB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A39DB741CE15FF70040DDAB /* main.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6A1CB5AF1CEBD88900047414 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = yes/main.swift; sourceTree = "<group>"; };
 		6A295E5C1CE2AD420021075F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6A295E5D1CE2AFA60021075F /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
 		6A39DB5E1CE14CCD0040DDAB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -85,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A1CB5AE1CEBD87600047414 /* yes */ = {
+			isa = PBXGroup;
+			children = (
+				6A1CB5AF1CEBD88900047414 /* main.swift */,
+			);
+			name = yes;
+			sourceTree = "<group>";
+		};
 		6A1F17CB1CE17BD900C79BCF /* env */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +188,7 @@
 		6AB535321CDE8A7A0086552A /* src */ = {
 			isa = PBXGroup;
 			children = (
+				6A1CB5AE1CEBD87600047414 /* yes */,
 				6ABA03A21CE83110002A3C9E /* echo */,
 				6A8318021CE7E3F300372B54 /* wc */,
 				6A1F17CB1CE17BD900C79BCF /* env */,
@@ -286,6 +297,7 @@
 			files = (
 				6A39DB831CE160880040DDAB /* XcodeColorsSupport.swift in Sources */,
 				6A39DB781CE160800040DDAB /* StringExtensions.swift in Sources */,
+				6A1CB5B01CEBD88900047414 /* main.swift in Sources */,
 				6A9A638B1CE17D06006F6776 /* main.swift in Sources */,
 				6A39DB6B1CE159900040DDAB /* main.swift in Sources */,
 				6A8318061CE7E4F400372B54 /* WCOptions.swift in Sources */,
