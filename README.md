@@ -8,9 +8,11 @@ It is dependent on the `Foundation` and the `Darwin` or the `Glibc` Swift module
 | --------- | ------------- |
 | echo      | **Done**      |
 | env       | **Done**      |
+| false     | **Done**      |
 | ls        | 25 %          |
 | uname     | 90 %          |
 | sleep	    | **Done**      |
+| true      | **Done**      |
 | wc        | 90 %          |
 | whoami    | **Done**      |
 | yes       | **Done**      |
