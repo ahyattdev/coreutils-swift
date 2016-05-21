@@ -13,7 +13,7 @@ LIBS = CommandLine Rainbow
 
 LIB_PRODUCTS = $(LIBS:%=$(BUILD_LIB_ROOT)/lib%.dylib) $(LIBS:%=$(BUILD_LIB_ROOT)/%.swiftmodule) $(LIBS:%=$(BUILD_LIB_ROOT)/%.swiftdoc)
 
-BINARIES = ls whoami uname env sleep wc echo yes true false pwd
+BINARIES = ls whoami uname env sleep wc echo yes true false pwd mkdir
 
 BIN_PRODUCTS = $(BINARIES:%=$(BUILD_BIN_ROOT)/%)
 

@@ -10,6 +10,7 @@ It is dependent on the `Foundation` and the `Darwin` or the `Glibc` Swift module
 | env       | **Done**      |
 | false     | **Done**      |
 | ls        | 25 %          |
+| mkdir     | 75 %          |
 | pwd       | **Done**      |
 | sleep	    | **Done**      |
 | true      | **Done**      |
