@@ -10,9 +10,10 @@ It is dependent on the `Foundation` and the `Darwin` or the `Glibc` Swift module
 | env       | **Done**      |
 | false     | **Done**      |
 | ls        | 25 %          |
-| uname     | 90 %          |
+| pwd       | **Done**      |
 | sleep	    | **Done**      |
 | true      | **Done**      |
+| uname     | 90 %          |
 | wc        | 90 %          |
 | whoami    | **Done**      |
 | yes       | **Done**      |
