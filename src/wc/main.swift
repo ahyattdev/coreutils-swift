@@ -1,3 +1,7 @@
+// FIXME: Implement wc without Foundation
+// Or wait until Swift 3.0
+#if !os(Linux)
+
 // Remove this if your command will not use Foundation
 import Foundation
 import Rainbow
@@ -26,7 +30,7 @@ cli.formatOutput = { s, type in
     default:
         str = s
     }
-    
+
     return cli.defaultFormat(str, type: type)
 }
 
@@ -93,30 +97,30 @@ for fileName in cli.unparsedArguments {
         fputs("wc: \(fileName): No such file or directory".red.bold + "\n", stderr)
         break
     }
-    
+
     guard fm.isReadableFileAtPath(fileName) else {
         fputs("wc: \(fileName): Permission denied".red.bold + "\n", stderr)
         break
     }
-    
+
     // TODO: Dynamically determine the encoding
     guard let data = fm.contentsAtPath(fileName),
         let contents = String(data: data, encoding: NSUTF8StringEncoding) else {
-            
+
         fputs("wc: \(fileName): Failed to load contents of file".red.bold + "\n", stderr)
         break
     }
-    
+
     let byteCountForFile = data.length
     let charCountForFile = contents.characters.count
     let lineCountForFile = countNewlines(contents)
     let wordCountForFile = contents.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).count
-    
+
     total.bytes += byteCountForFile
     total.chars += charCountForFile
     total.lines += lineCountForFile
     total.words += wordCountForFile
-        
+
     // TODO: Clean up this formatting
     var output = ""
     if WCOptions.CharCount {
@@ -134,8 +138,8 @@ for fileName in cli.unparsedArguments {
     if cli.unparsedArguments.count > 1 {
         output += fileName.magenta
     }
-    
-    print(output) 
+
+    print(output)
 }
 
 // Print the total if there are more than one files
@@ -161,3 +165,5 @@ if cli.unparsedArguments.count > 1 {
 // but it is included for clarity
 
 exit(EXIT_SUCCESS)
+
+#endif

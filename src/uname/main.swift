@@ -1,3 +1,6 @@
+// FIXME: Implement uname without Foundation
+#if !os(Linux)
+
 import CommandLine
 import Rainbow
 import Foundation
@@ -22,7 +25,7 @@ cli.formatOutput = { s, type in
     default:
         str = s
     }
-    
+
     return cli.defaultFormat(str, type: type)
 }
 
@@ -169,10 +172,10 @@ if Options.Hardware {
     var cputype: cpu_type_t = cpu_type_t()
     var cs: size_t = sizeof(cpu_type_t)
    // var ai: UnsafeMutablePointer<NXArchInfo>
-    
+
     sysctlbyname("hw.cputype", &cputype, &cs, nil, 0)
     guard let ai: UnsafePointer<NXArchInfo> = NXGetArchInfoFromCpuType(cputype, CPU_SUBTYPE_INTEL_MODEL_ALL),
-        
+
         let name = String.fromCString(ai.memory.name) else {
         fputs("Failed to get the CPU type\n", stderr)
         exit(EXIT_FAILURE)
@@ -181,14 +184,14 @@ if Options.Hardware {
 }
 
 // The GNU Coreutils uname command determines this at compiler time
-// with an autotools variable. 
+// with an autotools variable.
 
 // Since Swift deployment is limited now, we can return an OS string
 // based on the Swift OS compiler directive
 if Options.OS {
     // Default to what NSProcessInfo returns, it is NSMachOperatingSystem on Darwin
     var osname: String = pi.operatingSystemName()
-    
+
     #if os(OSX)
         osname = "Mac OS X"
     #elseif os(iOS)
@@ -196,10 +199,12 @@ if Options.OS {
     #elseif os(Linux)
         osname = "Linux"
     #endif
-    
+
     addInfo(osname)
 }
 
 print(info)
 
 exit(EXIT_SUCCESS)
+
+#endif

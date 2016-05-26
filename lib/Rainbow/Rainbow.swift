@@ -24,7 +24,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import Foundation
+// We won't use this
+// import Foundation
 
 /**
  A Mode code represnet a component for colorizing the string.
@@ -38,14 +39,14 @@ public protocol ModeCode {
  Setting for `Rainbow`.
  */
 public struct Rainbow {
-    
-    /// Output target for `Rainbow`. `Rainbow` should detect correct target itself, so you rarely need to set it. 
+
+    /// Output target for `Rainbow`. `Rainbow` should detect correct target itself, so you rarely need to set it.
     /// However, if you want the colorized string to be different, or the detection is not correct, you can set it manually.
     public static var outputTarget = OutputTarget.currentOutputTarget
-    
+
     /// Enable `Rainbow` to colorize string or not. Default is `true`.
     public static var enabled = true
-    
+
     static func extractModesForString(string: String)
         -> (color: Color?, backgroundColor: BackgroundColor?, styles: [Style]?, text: String)
     {
@@ -100,7 +101,7 @@ public struct Rainbow {
             }
         #endif
     }
-    
+
 }
 
 private extension String {
@@ -108,7 +109,7 @@ private extension String {
         let token = ControlCode.CSI
         return hasPrefix(token) && hasSuffix("\(token)0m")
     }
-    
+
     var isXcodeColorsStyle: Bool {
         let token = ControlCode.CSI
         return hasPrefix(token) && hasSuffix("\(token);")

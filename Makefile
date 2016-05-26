@@ -61,8 +61,6 @@ $(BUILD_BIN_ROOT)/%: $(LIB_PRODUCTS) src/*.swift src/%/*.swift
 	$(SWIFTFLAGS) \
 	src/*.swift src/$*/*.swift
 
-.PHONY: create-build-folder
-
 $(BUILD_FOLDERS):
 	mkdir -p $@
 

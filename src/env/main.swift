@@ -1,3 +1,6 @@
+// FIXME: Implement env without Foundation
+#if !os(Linux)
+
 import Foundation
 import Rainbow
 
@@ -23,7 +26,7 @@ cli.formatOutput = { s, type in
     default:
         str = s
     }
-    
+
     return cli.defaultFormat(str, type: type)
 }
 
@@ -79,7 +82,7 @@ for arg : String in cli.unparsedArguments {
     } else {
         command += arg + ""
     }
-    
+
     if !command.isEmpty {
         exit(system(command))
     }
@@ -95,3 +98,5 @@ for env in NSProcessInfo.processInfo().environment {
 }
 
 exit(EXIT_SUCCESS)
+
+#endif

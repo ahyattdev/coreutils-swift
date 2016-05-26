@@ -26,11 +26,55 @@
 
 // MARK: - Worker methods
 extension String {
+
+#if os(Linux) && !swift(>=3.0)
+func hasPrefix(prefix: String) -> Bool {
+if prefix.isEmpty {
+return false
+}
+
+let c = self.characters
+let p = prefix.characters
+
+if p.count > c.count {
+return false
+}
+
+for (c, p) in zip(c.prefix(p.count), p) {
+guard c == p else {
+return false
+}
+}
+
+return true
+}
+
+func hasSuffix(suffix: String) -> Bool {
+if suffix.isEmpty {
+return false
+}
+
+let c = self.characters
+let s = suffix.characters
+
+if s.count > c.count {
+return false
+}
+
+for (c, s) in zip(c.suffix(s.count), s) {
+guard c == s else {
+return false
+}
+}
+
+return true
+}
+#endif
     /**
      Apply a text color to current string.
-     
+
      - parameter color: The color to apply.
-     
+
      - returns: The colorized string based on current content.
      */
     #if swift(>=3.0)
@@ -42,13 +86,13 @@ extension String {
         return stringByApplying(color)
     }
     #endif
-    
+
     /**
      Remove a color from current string.
-     
+
      - Note: This method will return the string itself if there is no color component in it.
      Otherwise, a string without color component will be returned and other components will remain untouched..
-     
+
      - returns: A string without color.
      */
     #if swift(>=3.0)
@@ -66,12 +110,12 @@ extension String {
         return stringByApplyingColor(.Default)
     }
     #endif
-    
+
     /**
      Apply a background color to current string.
-     
+
      - parameter color: The background color to apply.
-     
+
      - returns: The background colorized string based on current content.
      */
     #if swift(>=3.0)
@@ -83,13 +127,13 @@ extension String {
         return stringByApplying(color)
     }
     #endif
-    
+
     /**
      Remove a background color from current string.
-     
+
      - Note: This method will return the string itself if there is no background color component in it.
      Otherwise, a string without background color component will be returned and other components will remain untouched.
-     
+
      - returns: A string without color.
      */
     #if swift(>=3.0)
@@ -105,16 +149,16 @@ extension String {
         guard let _ = Rainbow.extractModesForString(self).backgroundColor else {
             return self
         }
-    
+
         return stringByApplyingBackgroundColor(.Default)
     }
     #endif
-    
+
     /**
      Apply a style to current string.
-     
+
      - parameter style: The style to apply.
-     
+
      - returns: A string with specified style applied.
      */
     #if swift(>=3.0)
@@ -126,21 +170,21 @@ extension String {
         return stringByApplying(style)
     }
     #endif
-    
+
     /**
      Remove a style from current string.
-     
+
      - parameter style: The style to remove.
-     
+
      - returns: A string with specified style removed.
      */
     #if swift(>=3.0)
     public func stringByRemovingStyle(style: Style) -> String {
-        
+
         guard Rainbow.enabled else {
             return self
         }
-        
+
         let current = Rainbow.extractModesForString(string: self)
         if let styles = current.styles {
             var s = styles
@@ -161,11 +205,11 @@ extension String {
     }
     #else
     public func stringByRemovingStyle(style: Style) -> String {
-        
+
         guard Rainbow.enabled else {
             return self
         }
-        
+
         let current = Rainbow.extractModesForString(self)
         if let styles = current.styles {
             var s = styles
@@ -185,22 +229,22 @@ extension String {
         }
     }
     #endif
-    
+
     /**
      Remove all styles from current string.
 
      - Note: This method will return the string itself if there is no style components in it.
      Otherwise, a string without stlye components will be returned and other color components will remain untouched.
-     
+
      - returns: A string without style components.
      */
     #if swift(>=3.0)
     public func stringByRemovingAllStyles() -> String {
-        
+
         guard Rainbow.enabled else {
             return self
         }
-        
+
         let current = Rainbow.extractModesForString(string: self)
         return Rainbow.generateStringForColor(
             color: current.color,
@@ -211,11 +255,11 @@ extension String {
     }
     #else
     public func stringByRemovingAllStyles() -> String {
-        
+
         guard Rainbow.enabled else {
             return self
         }
-        
+
         let current = Rainbow.extractModesForString(self)
         return Rainbow.generateStringForColor(
             current.color,
@@ -225,36 +269,36 @@ extension String {
         )
     }
     #endif
-    
+
     /**
      Apply a series of modes to the string.
-     
+
      - parameter codes: Component mode code to apply to the string.
-     
+
      - returns: A string with specified modes applied.
      */
     #if swift(>=3.0)
     public func stringByApplying(codes: ModeCode...) -> String {
-        
+
         guard Rainbow.enabled else {
             return self
         }
-        
+
         let current = Rainbow.extractModesForString(string: self)
         let input = ConsoleCodesParser().parseModeCodes( codes: codes.map{ $0.value } )
-        
+
         let color = input.color ?? current.color
         let backgroundColor = input.backgroundColor ?? current.backgroundColor
         var styles = [Style]()
-        
+
         if let s = current.styles {
             styles += s
         }
-        
+
         if let s = input.styles {
             styles += s
         }
-        
+
         if codes.isEmpty {
             return self
         } else {
@@ -268,26 +312,26 @@ extension String {
     }
     #else
     public func stringByApplying(codes: ModeCode...) -> String {
-        
+
         guard Rainbow.enabled else {
             return self
         }
-        
+
         let current = Rainbow.extractModesForString(self)
         let input = ConsoleCodesParser().parseModeCodes( codes.map{ $0.value } )
-        
+
         let color = input.color ?? current.color
         let backgroundColor = input.backgroundColor ?? current.backgroundColor
         var styles = [Style]()
-        
+
         if let s = current.styles {
             styles += s
         }
-        
+
         if let s = input.styles {
             styles += s
         }
-        
+
         if codes.isEmpty {
             return self
         } else {
@@ -419,7 +463,7 @@ extension String {
     /// String with light white text. Generally speaking, it means light grey in some consoles.
     public var lightWhite: String { return stringByApplyingColor(.LightWhite) }
     }
-    
+
     // MARK: - Background Colors Shorthand
     extension String {
     /// String with black background.
@@ -439,7 +483,7 @@ extension String {
     /// String with white background.
     public var onWhite: String { return stringByApplyingBackgroundColor(.White) }
     }
-    
+
     // MARK: - Styles Shorthand
     extension String {
     /// String with bold style.
@@ -455,7 +499,7 @@ extension String {
     /// String with text color and background color swapped.
     public var swap: String { return stringByApplyingStyle(.Swap) }
     }
-    
+
     // MARK: - Clear Modes Shorthand
     extension String {
     /// Clear color component from string.

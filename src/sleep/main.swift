@@ -1,3 +1,50 @@
+#if os(Linux) && !swift(>=3.0)
+extension String {
+func hasPrefix(prefix: String) -> Bool {
+if prefix.isEmpty {
+return false
+}
+
+let c = self.characters
+let p = prefix.characters
+
+if p.count > c.count {
+return false
+}
+
+for (c, p) in zip(c.prefix(p.count), p) {
+guard c == p else {
+return false
+}
+}
+
+return true
+}
+
+func hasSuffix(suffix: String) -> Bool {
+if suffix.isEmpty {
+return false
+}
+
+let c = self.characters
+let s = suffix.characters
+
+if s.count > c.count {
+return false
+}
+
+for (c, s) in zip(c.suffix(s.count), s) {
+guard c == s else {
+return false
+}
+}
+
+return true
+}
+
+}
+#endif
+
 // Used for parsing arguments
 import CommandLine
 import Rainbow
@@ -93,4 +140,3 @@ numericDuration *= unit.rawValue
 sleep(numericDuration)
 
 exit(EXIT_SUCCESS)
-

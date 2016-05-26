@@ -1,3 +1,6 @@
+// FIXME: Implement ls without Foundation
+#if !os(Linux)
+
 import Foundation
 import CommandLine
 import Rainbow
@@ -24,7 +27,7 @@ cli.formatOutput = { s, type in
     default:
         str = s
     }
-    
+
     return cli.defaultFormat(str, type: type)
 }
 
@@ -55,9 +58,9 @@ func columnLabel(path: String) -> String {
 func list(path: String) {
     do {
         let contents = try fm.contentsOfDirectoryAtPath(path)
-        
+
         let formatter = Formatter(elements: contents)
-        
+
         print(formatter.columnsRepresentation())
     } catch {
         print("error getting contents of directory")
@@ -111,10 +114,12 @@ for path in listPaths {
         list(path)
         if listPaths.count > 1 && path != listPaths.last {
             print("")
-        } 
+        }
     } else {
         print(columnLabel(path))
     }
 }
 
 exit(EXIT_SUCCESS)
+
+#endif
