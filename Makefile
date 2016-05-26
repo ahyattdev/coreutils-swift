@@ -5,6 +5,8 @@ ifeq ($(OS),Linux)
 SWIFTC = swiftc
 LIB_EXT = so
 SWIFT_LIB_LFLAGS = -Xlinker -rpath=../lib/lib$*.$(LIB_EXT)
+SWIFT_BIN_LDFLAGS = -Xlinker -rpath -Xlinker ../lib
+
 endif
 
 ifeq ($(OS),Darwin)
@@ -12,6 +14,7 @@ ifeq ($(OS),Darwin)
 SWIFTC := $(shell xcrun -sdk macosx swiftc)
 LIB_EXT = dylib
 SWIFT_LIB_LFLAGS = -Xlinker -install_name -Xlinker @rpath/../lib/lib$*.$(LIB_EXT)
+SWIFT_BIN_LDFLAGS = -Xlinker -rpath -Xlinker @executable_path
 
 endif
 
@@ -56,8 +59,7 @@ $(BUILD_BIN_ROOT)/%: $(LIB_PRODUCTS) src/*.swift src/%/*.swift
 	-o $(BUILD_BIN_ROOT)/$* \
 	-I $(BUILD_LIB_ROOT) \
 	-L $(BUILD_LIB_ROOT) \
-	-Xlinker -rpath \
-	-Xlinker @executable_path \
+	$(SWIFT_BIN_LDFLAGS) \
 	$(SWIFTFLAGS) \
 	src/*.swift src/$*/*.swift
 
