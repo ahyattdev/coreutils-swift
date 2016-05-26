@@ -1,8 +1,24 @@
-SWIFTC ?= xcrun -sdk macosx swiftc
+OS = $(shell uname)
+
+ifeq ($(OS),Linux)
+
+SWIFTC = swiftc
+LIB_EXT = so
+SWIFT_LIB_LFLAGS = -Xlinker -rpath=../lib/lib$*.$(LIB_EXT)
+endif
+
+ifeq ($(OS),Darwin)
+
+SWIFTC := $(shell xcrun -sdk macosx swiftc)
+LIB_EXT = dylib
+SWIFT_LIB_LFLAGS = -Xlinker -install_name -Xlinker @rpath/../lib/lib$*.$(LIB_EXT)
+
+endif
+
 SWIFTFLAGS ?=
 DESTDIR ?=
 
-PWD = $(shell pwd)
+PWD := $(shell pwd)
 BUILD_ROOT ?= build
 BUILD_LIB_ROOT = $(BUILD_ROOT)/lib
 BUILD_BIN_ROOT = $(BUILD_ROOT)/bin
@@ -11,7 +27,7 @@ BUILD_FOLDERS = $(BUILD_BIN_ROOT) $(BUILD_LIB_ROOT)
 
 LIBS = CommandLine Rainbow
 
-LIB_PRODUCTS = $(LIBS:%=$(BUILD_LIB_ROOT)/lib%.dylib) $(LIBS:%=$(BUILD_LIB_ROOT)/%.swiftmodule) $(LIBS:%=$(BUILD_LIB_ROOT)/%.swiftdoc)
+LIB_PRODUCTS = $(LIBS:%=$(BUILD_LIB_ROOT)/lib%.$(LIB_EXT)) $(LIBS:%=$(BUILD_LIB_ROOT)/%.swiftmodule) $(LIBS:%=$(BUILD_LIB_ROOT)/%.swiftdoc)
 
 BINARIES = ls whoami uname env sleep wc echo yes true false pwd mkdir
 
@@ -19,16 +35,15 @@ BIN_PRODUCTS = $(BINARIES:%=$(BUILD_BIN_ROOT)/%)
 
 all: $(LIB_PRODUCTS) $(BIN_PRODUCTS)
 
-$(BUILD_LIB_ROOT)/%.swiftmodule: $(BUILD_LIB_ROOT)/lib%.dylib
+$(BUILD_LIB_ROOT)/%.swiftmodule: $(BUILD_LIB_ROOT)/lib%.$(LIB_EXT)
 
-$(BUILD_LIB_ROOT)/%.swiftdoc: $(BUILD_LIB_ROOT)/lib%.dylib
+$(BUILD_LIB_ROOT)/%.swiftdoc: $(BUILD_LIB_ROOT)/lib%.$(LIB_EXT)
 
-$(BUILD_LIB_ROOT)/lib%.dylib: lib/%/*.swift | $(BUILD_FOLDERS)
+$(BUILD_LIB_ROOT)/lib%.$(LIB_EXT): lib/%/*.swift | $(BUILD_FOLDERS)
 	$(SWIFTC) \
 	-emit-library \
-	-o $(BUILD_LIB_ROOT)/lib$*.dylib \
-	-Xlinker -install_name \
-	-Xlinker @rpath/../lib/lib$*.dylib \
+	-o $(BUILD_LIB_ROOT)/lib$*.$(LIB_EXT) \
+	$(SWIFT_LIB_LFLAGS) \
 	-emit-module \
 	-emit-module-path $(BUILD_LIB_ROOT)/$*.swiftmodule \
 	-module-name $* \
