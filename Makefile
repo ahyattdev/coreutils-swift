@@ -5,7 +5,7 @@ ifeq ($(OS),Linux)
 SWIFTC = swiftc
 LIB_EXT = so
 SWIFT_LIB_LFLAGS = -Xlinker -rpath=../lib/lib$*.$(LIB_EXT)
-SWIFT_BIN_LDFLAGS = -Xlinker -rpath -Xlinker ../lib
+SWIFT_BIN_LDFLAGS = -Xlinker "-R\$$ORIGIN/../lib"
 
 endif
 
