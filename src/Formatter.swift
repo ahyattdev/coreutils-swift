@@ -18,6 +18,8 @@ class Formatter {
     
     func columnsRepresentation() -> String {
         
+        print("wew")
+        
         // With Swift 3 we will be able to use ioctl()
         // It is a variadic function and Swift 2.2 does not support it
         //var size: winsize = winsize()
