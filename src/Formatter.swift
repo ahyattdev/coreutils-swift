@@ -29,17 +29,17 @@ class Formatter {
             initialColumns = elements.count
         }
         
-        let columnData = findColumnsRecursive(initialColumns)
+        let columnData = findColumnsRecursive(columns: initialColumns)
         
-        let spacedElements = appendSpaceToElements(elements, widths: columnData.columnWidths, columns: columnData.columns)
+        let spacedElements = appendSpaceToElements(elements: elements, widths: columnData.columnWidths, columns: columnData.columns)
         
-        let representation = arrayToString(spacedElements)
+        let representation = arrayToString(array: spacedElements)
         
         return representation
     }
     
     func findColumnsRecursive(columns: Int) -> (columns: Int, columnWidths: [Int]) {
-        let widths = columnSizes(columns)
+        let widths = columnSizes(columns: columns)
         
         // Get a sum
         var sum = 0
@@ -48,7 +48,7 @@ class Formatter {
         }
         
         if sum > screenWidth {
-            return findColumnsRecursive(columns - 1)
+            return findColumnsRecursive(columns: columns - 1)
         } else {
             return (columns, widths)
         }
@@ -96,7 +96,7 @@ class Formatter {
             var spacedElement: String
             
             if padding != 0 {
-                spacedElement = appendSpace(padding, string: element)
+                spacedElement = appendSpace(spaces: padding, string: element)
             } else {
                 spacedElement = element
             }

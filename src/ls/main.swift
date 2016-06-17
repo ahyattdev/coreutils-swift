@@ -5,7 +5,7 @@ import Foundation
 import CommandLine
 import Rainbow
 
-let fm = NSFileManager.defaultManager()
+let fm = FileManager.default()
 
 enum Mode {
     case Auto
@@ -28,7 +28,7 @@ cli.formatOutput = { s, type in
         str = s
     }
 
-    return cli.defaultFormat(str, type: type)
+    return cli.defaultFormat(s: str, type: type)
 }
 
 let showDotFiles = BoolOption(shortFlag: "a", longFlag: "all",
@@ -52,12 +52,12 @@ cli.addOptions(showDotFiles, showDotFilesWithoutImplied, humanReadable, showColu
 
 
 func columnLabel(path: String) -> String {
-    return fm.displayNameAtPath(path)
+    return fm.displayName(atPath: path)
 }
 
 func list(path: String) {
     do {
-        let contents = try fm.contentsOfDirectoryAtPath(path)
+        let contents = try fm.contentsOfDirectory(atPath: path)
 
         let formatter = Formatter(elements: contents)
 
@@ -69,7 +69,7 @@ func list(path: String) {
 }
 
 do {
-    try cli.parse(true)
+    try cli.parse(strict: true)
 } catch {
     cli.printUsage(error)
     exit(EXIT_FAILURE)
@@ -98,7 +98,7 @@ if listPaths.count == 0 {
 }
 
 for path in listPaths {
-    guard fm.fileExistsAtPath(path) else {
+    guard fm.fileExists(atPath: path) else {
         print("ls: no such path \(path)")
         exit(EXIT_FAILURE)
     }
@@ -106,17 +106,17 @@ for path in listPaths {
 
 for path in listPaths {
     var isDirectory: ObjCBool = false
-    fm.fileExistsAtPath(path, isDirectory: &isDirectory)
+    fm.fileExists(atPath: path, isDirectory: &isDirectory)
     if isDirectory {
         if listPaths.count > 1 {
-            print(fm.displayNameAtPath(path) + ":")
+            print(fm.displayName(atPath: path) + ":")
         }
-        list(path)
+        list(path: path)
         if listPaths.count > 1 && path != listPaths.last {
             print("")
         }
     } else {
-        print(columnLabel(path))
+        print(columnLabel(path: path))
     }
 }
 
