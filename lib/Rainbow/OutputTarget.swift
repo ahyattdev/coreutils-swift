@@ -31,12 +31,10 @@ import Darwin.C
 #endif
 
 private func getEnvValue(key: String) -> String? {
-    let value = getenv(key)
-    #if swift(>=3.0)
-        return value != nil ? String(cString: value!) : nil
-    #else
-        return value != nil ? String.fromCString(value) : nil
-    #endif
+    guard let value = getenv(key) else {
+        return nil
+    }
+    return String(cString: value)
 }
 
 
@@ -56,27 +54,17 @@ public enum OutputTarget {
     /// Detected output target by current envrionment.
     static var currentOutputTarget: OutputTarget = {
         // Check if Xcode Colors is installed and enabled.
-        #if swift(>=3.0)
-            let xcodeColorsEnabled = (getEnvValue(key: "XcodeColors") == "YES")
-        #else
-            let xcodeColorsEnabled = (getEnvValue("XcodeColors") == "YES")
-        #endif
+        let xcodeColorsEnabled = (getEnvValue(key: "XcodeColors") == "YES")
         if xcodeColorsEnabled {
             return .XcodeColors
         }
         
         // Check if we are in any term env and the output is a tty.
-        #if swift(>=3.0)
-            let termType = getEnvValue(key: "TERM")
-            if let t = termType where t.lowercased() != "dumb" && isatty(fileno(stdout)) != 0 {
-                return .Console
-            }
-        #else
-            let termType = getEnvValue("TERM")
-            if let t = termType where t.lowercaseString != "dumb" && isatty(fileno(stdout)) != 0 {
-                return .Console
-            }
-        #endif
+        let termType = getEnvValue(key: "TERM")
+        if let t = termType where t.lowercased() != "dumb" && isatty(fileno(stdout)) != 0 {
+            return .Console
+        }
+        
         return .Unknown
     }()
 }

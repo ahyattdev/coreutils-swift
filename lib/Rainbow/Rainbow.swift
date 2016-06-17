@@ -24,8 +24,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-// We won't use this
-// import Foundation
+import Foundation
 
 /**
  A Mode code represnet a component for colorizing the string.
@@ -39,34 +38,24 @@ public protocol ModeCode {
  Setting for `Rainbow`.
  */
 public struct Rainbow {
-
-    /// Output target for `Rainbow`. `Rainbow` should detect correct target itself, so you rarely need to set it.
+    
+    /// Output target for `Rainbow`. `Rainbow` should detect correct target itself, so you rarely need to set it. 
     /// However, if you want the colorized string to be different, or the detection is not correct, you can set it manually.
     public static var outputTarget = OutputTarget.currentOutputTarget
-
+    
     /// Enable `Rainbow` to colorize string or not. Default is `true`.
     public static var enabled = true
-
+    
     static func extractModesForString(string: String)
         -> (color: Color?, backgroundColor: BackgroundColor?, styles: [Style]?, text: String)
     {
         if string.isConsoleStyle {
-            #if swift(>=3.0)
-                let result = ConsoleModesExtractor().extractModeCodes(string: string)
-                let (color, backgroundColor, styles) = ConsoleCodesParser().parseModeCodes(codes: result.codes)
-            #else
-                let result = ConsoleModesExtractor().extractModeCodes(string)
-                let (color, backgroundColor, styles) = ConsoleCodesParser().parseModeCodes(result.codes)
-            #endif
+            let result = ConsoleModesExtractor().extractModeCodes(string: string)
+            let (color, backgroundColor, styles) = ConsoleCodesParser().parseModeCodes(codes: result.codes)
             return (color, backgroundColor, styles, result.text)
         } else if string.isXcodeColorsStyle {
-            #if swift(>=3.0)
-                let result = XcodeColorsModesExtractor().extractModeCodes(string: string)
-                let (color, backgroundColor, _) = XcodeColorsCodesParser().parseModeCodes(codes: result.codes)
-            #else
-                let result = XcodeColorsModesExtractor().extractModeCodes(string)
-                let (color, backgroundColor, _) = XcodeColorsCodesParser().parseModeCodes(result.codes)
-            #endif
+            let result = XcodeColorsModesExtractor().extractModeCodes(string: string)
+            let (color, backgroundColor, _) = XcodeColorsCodesParser().parseModeCodes(codes: result.codes)
             return (color, backgroundColor, nil, result.text)
         } else {
             return (nil, nil, nil, string)
@@ -81,7 +70,7 @@ public struct Rainbow {
         guard enabled else {
             return text
         }
-        #if swift(>=3.0)
+        
         switch outputTarget {
         case .XcodeColors:
             return XcodeColorsStringGenerator().generateStringColor(color: color, backgroundColor: backgroundColor, styles: styles, text: text)
@@ -89,19 +78,9 @@ public struct Rainbow {
             return ConsoleStringGenerator().generateStringColor(color: color, backgroundColor: backgroundColor, styles: styles, text: text)
         case .Unknown:
             return text
-            }
-        #else
-        switch outputTarget {
-        case .XcodeColors:
-            return XcodeColorsStringGenerator().generateStringColor(color, backgroundColor: backgroundColor, styles: styles, text: text)
-        case .Console:
-            return ConsoleStringGenerator().generateStringColor(color, backgroundColor: backgroundColor, styles: styles, text: text)
-        case .Unknown:
-            return text
-            }
-        #endif
+        }
     }
-
+    
 }
 
 private extension String {
@@ -109,7 +88,7 @@ private extension String {
         let token = ControlCode.CSI
         return hasPrefix(token) && hasSuffix("\(token)0m")
     }
-
+    
     var isXcodeColorsStyle: Bool {
         let token = ControlCode.CSI
         return hasPrefix(token) && hasSuffix("\(token);")

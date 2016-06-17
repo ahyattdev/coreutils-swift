@@ -16,131 +16,12 @@
  */
 
 /* Required for localeconv(3) */
-#if os(OSX) || os(iOS)
+#if os(OSX)
   import Darwin
 #elseif os(Linux)
   import Glibc
 #endif
 
-#if swift(>=3.0)
-
-    
-    internal extension String {
-    /* Retrieves locale-specified decimal separator from the environment
-     * using localeconv(3).
-     */
-    private func _localDecimalPoint() -> Character {
-    if let locale = localeconv() {
-    let decimalPoint = locale.pointee.decimal_point
-    if decimalPoint != nil {
-    return Character(UnicodeScalar(UInt32(decimalPoint.pointee)))
-    }
-    }
-    
-    return "."
-    }
-    
-    /**
-     * Attempts to parse the string value into a Double.
-     *
-     * - returns: A Double if the string can be parsed, nil otherwise.
-     */
-    func toDouble() -> Double? {
-    var characteristic: String = "0"
-    var mantissa: String = "0"
-    var inMantissa: Bool = false
-    var isNegative: Bool = false
-    let decimalPoint = self._localDecimalPoint()
-    
-    for (i, c) in self.characters.enumerated() {
-    if i == 0 && c == "-" {
-    isNegative = true
-    continue
-    }
-    
-    if c == decimalPoint {
-    inMantissa = true
-    continue
-    }
-    
-    if Int(String(c)) != nil {
-    if !inMantissa {
-    characteristic.append(c)
-    } else {
-    mantissa.append(c)
-    }
-    } else {
-    /* Non-numeric character found, bail */
-    return nil
-    }
-    }
-    
-    return (Double(Int(characteristic)!) +
-    Double(Int(mantissa)!) / pow(Double(10), Double(mantissa.characters.count - 1))) *
-    (isNegative ? -1 : 1)
-    }
-    
-    /**
-     * Pads a string to the specified width.
-     *
-     * - parameter width: The width to pad the string to.
-     * - parameter padBy: The character to use for padding.
-     *
-     * - returns: A new string, padded to the given width.
-     */
-    func paddedToWidth(_ width: Int, padBy: Character = " ") -> String {
-    var s = self
-    var currentLength = self.characters.count
-    
-    while currentLength < width {
-    s.append(padBy)
-    currentLength += 1
-    }
-    
-    return s
-    }
-    
-    /**
-     * Wraps a string to the specified width.
-     *
-     * This just does simple greedy word-packing, it doesn't go full Knuth-Plass.
-     * If a single word is longer than the line width, it will be placed (unsplit)
-     * on a line by itself.
-     *
-     * - parameter width:   The maximum length of a line.
-     * - parameter wrapBy:  The line break character to use.
-     * - parameter splitBy: The character to use when splitting the string into words.
-     *
-     * - returns: A new string, wrapped at the given width.
-     */
-    func wrappedAtWidth(_ width: Int, wrapBy: Character = "\n", splitBy: Character = " ") -> String {
-    var s = ""
-    var currentLineWidth = 0
-    
-    for word in self.characters.split(separator: splitBy).map(String.init) {
-    let wordLength = word.characters.count
-    
-    if currentLineWidth + wordLength + 1 > width {
-    /* Word length is greater than line length, can't wrap */
-    if wordLength >= width {
-    s += word
-    }
-    
-    s.append(wrapBy)
-    currentLineWidth = 0
-    }
-    
-    currentLineWidth += wordLength + 1
-    s += word
-    s.append(splitBy)
-    }
-    
-    return s
-    }
-    }
-    
-#else
-    
 internal extension String {
   /* Retrieves locale-specified decimal separator from the environment
    * using localeconv(3).
@@ -148,10 +29,16 @@ internal extension String {
   private func _localDecimalPoint() -> Character {
     let locale = localeconv()
     if locale != nil {
-      let decimalPoint = locale.memory.decimal_point
-      if decimalPoint != nil {
-        return Character(UnicodeScalar(UInt32(decimalPoint.memory)))
-      }
+      #if swift(>=3.0)
+        if let decimalPoint = locale?.pointee.decimal_point {
+          return Character(UnicodeScalar(UInt32(decimalPoint.pointee)))
+        }
+      #else
+        let decimalPoint = locale.memory.decimal_point
+        if decimalPoint != nil {
+          return Character(UnicodeScalar(UInt32(decimalPoint.memory)))
+        }
+      #endif
     }
 
     return "."
@@ -169,7 +56,12 @@ internal extension String {
     var isNegative: Bool = false
     let decimalPoint = self._localDecimalPoint()
 
-    for (i, c) in self.characters.enumerate() {
+    #if swift(>=3.0)
+      let charactersEnumerator = self.characters.enumerated()
+    #else
+      let charactersEnumerator = self.characters.enumerate()
+    #endif
+    for (i, c) in charactersEnumerator {
       if i == 0 && c == "-" {
         isNegative = true
         continue
@@ -205,6 +97,28 @@ internal extension String {
    *
    * - returns: An array of string components.
    */
+  #if swift(>=3.0)
+  func splitByCharacter(_ splitBy: Character, maxSplits: Int = 0) -> [String] {
+    var s = [String]()
+    var numSplits = 0
+
+    var curIdx = self.startIndex
+    for i in self.characters.indices {
+      let c = self[i]
+      if c == splitBy && (maxSplits == 0 || numSplits < maxSplits) {
+        s.append(self[curIdx..<i])
+        curIdx = self.index(after: i)
+        numSplits += 1
+      }
+    }
+
+    if curIdx != self.endIndex {
+      s.append(self[curIdx..<self.endIndex])
+    }
+
+    return s
+  }
+  #else
   func splitByCharacter(splitBy: Character, maxSplits: Int = 0) -> [String] {
     var s = [String]()
     var numSplits = 0
@@ -225,6 +139,7 @@ internal extension String {
 
     return s
   }
+  #endif
 
   /**
    * Pads a string to the specified width.
@@ -234,6 +149,59 @@ internal extension String {
    *
    * - returns: A new string, padded to the given width.
    */
+  #if swift(>=3.0)
+  func paddedToWidth(_ width: Int, padBy: Character = " ") -> String {
+    var s = self
+    var currentLength = self.characters.count
+
+    while currentLength < width {
+      s.append(padBy)
+      currentLength += 1
+    }
+
+    return s
+  }
+
+  /**
+   * Wraps a string to the specified width.
+   *
+   * This just does simple greedy word-packing, it doesn't go full Knuth-Plass.
+   * If a single word is longer than the line width, it will be placed (unsplit)
+   * on a line by itself.
+   *
+   * - parameter width:   The maximum length of a line.
+   * - parameter wrapBy:  The line break character to use.
+   * - parameter splitBy: The character to use when splitting the string into words.
+   *
+   * - returns: A new string, wrapped at the given width.
+   */
+  func wrappedAtWidth(_ width: Int, wrapBy: Character = "\n", splitBy: Character = " ") -> String {
+    var s = ""
+    var currentLineWidth = 0
+
+    for word in self.splitByCharacter(splitBy) {
+      let wordLength = word.characters.count
+
+      if currentLineWidth + wordLength + 1 > width {
+        /* Word length is greater than line length, can't wrap */
+        if wordLength >= width {
+          s += word
+        }
+
+        s.append(wrapBy)
+        currentLineWidth = 0
+      }
+
+      currentLineWidth += wordLength + 1
+      s += word
+      s.append(splitBy)
+    }
+
+    return s
+  }
+
+  #else
+
   func paddedToWidth(width: Int, padBy: Character = " ") -> String {
     var s = self
     var currentLength = self.characters.count
@@ -283,119 +251,7 @@ internal extension String {
 
     return s
   }
+
+  #endif
+
 }
-
-#endif
-
-#if os(Linux)
-    #if swift(>=3.0)
-        
-        
-        extension String {
-        func hasPrefix(_ prefix: String) -> Bool {
-        if prefix.isEmpty {
-        return false
-        }
-        
-        let c = self.characters
-        let p = prefix.characters
-        
-        if p.count > c.count {
-        return false
-        }
-        
-        for (c, p) in zip(c.prefix(p.count), p) {
-        guard c == p else {
-        return false
-        }
-        }
-        
-        return true
-        }
-        
-        /**
-         *  Returns `true` iff `self` ends with `suffix`.
-         *
-         *  A basic implementation of `hasSuffix` for Linux.
-         *  Should be removed once a proper `hasSuffix` patch makes it to the Swift 2.2 development branch.
-         */
-        func hasSuffix(_ suffix: String) -> Bool {
-        if suffix.isEmpty {
-        return false
-        }
-        
-        let c = self.characters
-        let s = suffix.characters
-        
-        if s.count > c.count {
-        return false
-        }
-        
-        for (c, s) in zip(c.suffix(s.count), s) {
-        guard c == s else {
-        return false
-        }
-        }
-        
-        return true
-        }
-        }
-        #else
-        
-/**
- *  Returns `true` iff `self` begins with `prefix`.
- *
- *  A basic implementation of `hasPrefix` for Linux.
- *  Should be removed once a proper `hasPrefix` patch makes it to the Swift 2.2 development branch.
- */
-extension String {
-  func hasPrefix(prefix: String) -> Bool {
-    if prefix.isEmpty {
-      return false
-    }
-
-    let c = self.characters
-    let p = prefix.characters
-
-    if p.count > c.count {
-      return false
-    }
-
-    for (c, p) in zip(c.prefix(p.count), p) {
-      guard c == p else {
-        return false
-      }
-    }
-
-    return true
-  }
-
-  /**
-   *  Returns `true` iff `self` ends with `suffix`.
-   *
-   *  A basic implementation of `hasSuffix` for Linux.
-   *  Should be removed once a proper `hasSuffix` patch makes it to the Swift 2.2 development branch.
-   */
-  func hasSuffix(suffix: String) -> Bool {
-    if suffix.isEmpty {
-      return false
-    }
-
-    let c = self.characters
-    let s = suffix.characters
-
-    if s.count > c.count {
-      return false
-    }
-
-    for (c, s) in zip(c.suffix(s.count), s) {
-      guard c == s else {
-        return false
-      }
-    }
-
-    return true
-  }
-}
-        #endif
-#endif
