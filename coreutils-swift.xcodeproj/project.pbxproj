@@ -273,7 +273,6 @@
 		66FFEF441D14CFB6008F2119 /* lib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = lib.xcodeproj; path = lib/lib.xcodeproj; sourceTree = "<group>"; };
 		6A295E5C1CE2AD420021075F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6A295E5D1CE2AFA60021075F /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
-		6AB535311CDE8A7A0086552A /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; usesTabs = 1; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -312,7 +311,6 @@
 				66FFEE321D14CAC3008F2119 /* src.xcodeproj */,
 				6A295E5D1CE2AFA60021075F /* CONTRIBUTING.md */,
 				6A295E5C1CE2AD420021075F /* README.md */,
-				6AB535311CDE8A7A0086552A /* Makefile */,
 			);
 			sourceTree = "<group>";
 		};
