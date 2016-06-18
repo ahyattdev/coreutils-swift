@@ -7,6 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66EA156A1D14EC0B00CAF239 /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15691D14EC0B00CAF239 /* CommandLine.framework */; };
+		66EA156C1D14EC0D00CAF239 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA156B1D14EC0D00CAF239 /* Rainbow.framework */; };
+		66EA156E1D14EC1000CAF239 /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA156D1D14EC1000CAF239 /* CommandLine.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		66EA15701D14EC1200CAF239 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA156F1D14EC1200CAF239 /* Rainbow.framework */; };
+		66EA15721D14EC3500CAF239 /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15711D14EC3500CAF239 /* CommandLine.framework */; };
+		66EA15741D14EC3700CAF239 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15731D14EC3700CAF239 /* Rainbow.framework */; };
+		66EA15751D14EC3C00CAF239 /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15711D14EC3500CAF239 /* CommandLine.framework */; };
+		66EA15761D14EC3D00CAF239 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15731D14EC3700CAF239 /* Rainbow.framework */; };
+		66EA15771D14EC4300CAF239 /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15711D14EC3500CAF239 /* CommandLine.framework */; };
+		66EA15781D14EC4500CAF239 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15731D14EC3700CAF239 /* Rainbow.framework */; };
+		66EA15791D14EC4900CAF239 /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15711D14EC3500CAF239 /* CommandLine.framework */; };
+		66EA157A1D14EC4B00CAF239 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15731D14EC3700CAF239 /* Rainbow.framework */; };
+		66EA157B1D14EC5100CAF239 /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15711D14EC3500CAF239 /* CommandLine.framework */; };
+		66EA157C1D14EC5300CAF239 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15731D14EC3700CAF239 /* Rainbow.framework */; };
+		66EA157D1D14EC5600CAF239 /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15711D14EC3500CAF239 /* CommandLine.framework */; };
+		66EA157E1D14EC5800CAF239 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15731D14EC3700CAF239 /* Rainbow.framework */; };
+		66EA157F1D14EC5B00CAF239 /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15711D14EC3500CAF239 /* CommandLine.framework */; };
+		66EA15801D14EC5D00CAF239 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15731D14EC3700CAF239 /* Rainbow.framework */; };
+		66EA15811D14EC6500CAF239 /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15711D14EC3500CAF239 /* CommandLine.framework */; };
+		66EA15821D14EC6700CAF239 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15731D14EC3700CAF239 /* Rainbow.framework */; };
+		66EA15831D14EC6B00CAF239 /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15711D14EC3500CAF239 /* CommandLine.framework */; };
+		66EA15841D14EC6C00CAF239 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15731D14EC3700CAF239 /* Rainbow.framework */; };
+		66EA15851D14EC7100CAF239 /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15711D14EC3500CAF239 /* CommandLine.framework */; };
+		66EA15861D14EC7200CAF239 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15731D14EC3700CAF239 /* Rainbow.framework */; };
 		66FFEEF81D14CF0C008F2119 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEEE41D14CF07008F2119 /* Formatter.swift */; };
 		66FFEEF91D14CF18008F2119 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEEDF1D14CF07008F2119 /* main.swift */; };
 		66FFEEFA1D14CF1B008F2119 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEEE11D14CF07008F2119 /* main.swift */; };
@@ -20,30 +44,6 @@
 		66FFEF031D14CF3D008F2119 /* WCOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEEF31D14CF07008F2119 /* WCOptions.swift */; };
 		66FFEF041D14CF41008F2119 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEEF51D14CF07008F2119 /* main.swift */; };
 		66FFEF051D14CF44008F2119 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEEF71D14CF07008F2119 /* main.swift */; };
-		66FFEF9A1D14D277008F2119 /* libCommandLine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FFEF981D14D277008F2119 /* libCommandLine.dylib */; };
-		66FFEF9B1D14D277008F2119 /* libRainbow.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FFEF991D14D277008F2119 /* libRainbow.dylib */; };
-		66FFEF9C1D14D27D008F2119 /* libCommandLine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FFEF981D14D277008F2119 /* libCommandLine.dylib */; };
-		66FFEF9D1D14D27D008F2119 /* libRainbow.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FFEF991D14D277008F2119 /* libRainbow.dylib */; };
-		66FFEF9E1D14D29A008F2119 /* libCommandLine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FFEF981D14D277008F2119 /* libCommandLine.dylib */; };
-		66FFEF9F1D14D29A008F2119 /* libRainbow.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FFEF991D14D277008F2119 /* libRainbow.dylib */; };
-		66FFEFA01D14D2A0008F2119 /* libCommandLine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FFEF981D14D277008F2119 /* libCommandLine.dylib */; };
-		66FFEFA11D14D2A0008F2119 /* libRainbow.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FFEF991D14D277008F2119 /* libRainbow.dylib */; };
-		66FFEFA21D14D2A6008F2119 /* libCommandLine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FFEF981D14D277008F2119 /* libCommandLine.dylib */; };
-		66FFEFA31D14D2A6008F2119 /* libRainbow.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FFEF991D14D277008F2119 /* libRainbow.dylib */; };
-		66FFEFA41D14D2AC008F2119 /* libCommandLine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FFEF981D14D277008F2119 /* libCommandLine.dylib */; };
-		66FFEFA51D14D2AC008F2119 /* libRainbow.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FFEF991D14D277008F2119 /* libRainbow.dylib */; };
-		66FFEFA61D14D2B2008F2119 /* libCommandLine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FFEF981D14D277008F2119 /* libCommandLine.dylib */; };
-		66FFEFA71D14D2B2008F2119 /* libRainbow.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FFEF991D14D277008F2119 /* libRainbow.dylib */; };
-		66FFEFA81D14D2B7008F2119 /* libCommandLine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FFEF981D14D277008F2119 /* libCommandLine.dylib */; };
-		66FFEFA91D14D2B7008F2119 /* libRainbow.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FFEF991D14D277008F2119 /* libRainbow.dylib */; };
-		66FFEFAA1D14D2BB008F2119 /* libCommandLine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FFEF981D14D277008F2119 /* libCommandLine.dylib */; };
-		66FFEFAB1D14D2BB008F2119 /* libRainbow.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FFEF991D14D277008F2119 /* libRainbow.dylib */; };
-		66FFEFAC1D14D2BF008F2119 /* libCommandLine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FFEF981D14D277008F2119 /* libCommandLine.dylib */; };
-		66FFEFAD1D14D2BF008F2119 /* libRainbow.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FFEF991D14D277008F2119 /* libRainbow.dylib */; };
-		66FFEFAE1D14D2C4008F2119 /* libCommandLine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FFEF981D14D277008F2119 /* libCommandLine.dylib */; };
-		66FFEFAF1D14D2C4008F2119 /* libRainbow.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FFEF991D14D277008F2119 /* libRainbow.dylib */; };
-		66FFEFB01D14D2C8008F2119 /* libCommandLine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FFEF981D14D277008F2119 /* libCommandLine.dylib */; };
-		66FFEFB11D14D2C8008F2119 /* libRainbow.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FFEF991D14D277008F2119 /* libRainbow.dylib */; };
 		66FFEFB21D14DC51008F2119 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEEF01D14CF07008F2119 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +159,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		66EA15691D14EC0B00CAF239 /* CommandLine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CommandLine.framework; path = ../lib/build/Debug/CommandLine.framework; sourceTree = "<group>"; };
+		66EA156B1D14EC0D00CAF239 /* Rainbow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rainbow.framework; path = ../lib/build/Debug/Rainbow.framework; sourceTree = "<group>"; };
+		66EA156D1D14EC1000CAF239 /* CommandLine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CommandLine.framework; path = ../lib/build/Debug/CommandLine.framework; sourceTree = "<group>"; };
+		66EA156F1D14EC1200CAF239 /* Rainbow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rainbow.framework; path = ../lib/build/Debug/Rainbow.framework; sourceTree = "<group>"; };
+		66EA15711D14EC3500CAF239 /* CommandLine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CommandLine.framework; path = "../../../Library/Developer/Xcode/DerivedData/coreutils-swift-fqkkbsxfufptwqcgfeevxcodvjah/Build/Products/Debug/CommandLine.framework"; sourceTree = "<group>"; };
+		66EA15731D14EC3700CAF239 /* Rainbow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rainbow.framework; path = "../../../Library/Developer/Xcode/DerivedData/coreutils-swift-fqkkbsxfufptwqcgfeevxcodvjah/Build/Products/Debug/Rainbow.framework"; sourceTree = "<group>"; };
 		66FFEE391D14CAFE008F2119 /* ls */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ls; sourceTree = BUILT_PRODUCTS_DIR; };
 		66FFEE481D14CC33008F2119 /* echo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = echo; sourceTree = BUILT_PRODUCTS_DIR; };
 		66FFEE531D14CC3E008F2119 /* env */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = env; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,8 +200,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66FFEFA01D14D2A0008F2119 /* libCommandLine.dylib in Frameworks */,
-				66FFEFA11D14D2A0008F2119 /* libRainbow.dylib in Frameworks */,
+				66EA15751D14EC3C00CAF239 /* CommandLine.framework in Frameworks */,
+				66EA15761D14EC3D00CAF239 /* Rainbow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,8 +209,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66FFEF9A1D14D277008F2119 /* libCommandLine.dylib in Frameworks */,
-				66FFEF9B1D14D277008F2119 /* libRainbow.dylib in Frameworks */,
+				66EA156E1D14EC1000CAF239 /* CommandLine.framework in Frameworks */,
+				66EA15701D14EC1200CAF239 /* Rainbow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,8 +218,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66FFEF9C1D14D27D008F2119 /* libCommandLine.dylib in Frameworks */,
-				66FFEF9D1D14D27D008F2119 /* libRainbow.dylib in Frameworks */,
+				66EA156A1D14EC0B00CAF239 /* CommandLine.framework in Frameworks */,
+				66EA156C1D14EC0D00CAF239 /* Rainbow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,8 +227,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66FFEF9E1D14D29A008F2119 /* libCommandLine.dylib in Frameworks */,
-				66FFEF9F1D14D29A008F2119 /* libRainbow.dylib in Frameworks */,
+				66EA15721D14EC3500CAF239 /* CommandLine.framework in Frameworks */,
+				66EA15741D14EC3700CAF239 /* Rainbow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,8 +236,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66FFEFA81D14D2B7008F2119 /* libCommandLine.dylib in Frameworks */,
-				66FFEFA91D14D2B7008F2119 /* libRainbow.dylib in Frameworks */,
+				66EA157D1D14EC5600CAF239 /* CommandLine.framework in Frameworks */,
+				66EA157E1D14EC5800CAF239 /* Rainbow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,8 +245,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66FFEFA21D14D2A6008F2119 /* libCommandLine.dylib in Frameworks */,
-				66FFEFA31D14D2A6008F2119 /* libRainbow.dylib in Frameworks */,
+				66EA15771D14EC4300CAF239 /* CommandLine.framework in Frameworks */,
+				66EA15781D14EC4500CAF239 /* Rainbow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,8 +254,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66FFEFA41D14D2AC008F2119 /* libCommandLine.dylib in Frameworks */,
-				66FFEFA51D14D2AC008F2119 /* libRainbow.dylib in Frameworks */,
+				66EA15791D14EC4900CAF239 /* CommandLine.framework in Frameworks */,
+				66EA157A1D14EC4B00CAF239 /* Rainbow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +263,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66FFEFA61D14D2B2008F2119 /* libCommandLine.dylib in Frameworks */,
-				66FFEFA71D14D2B2008F2119 /* libRainbow.dylib in Frameworks */,
+				66EA157B1D14EC5100CAF239 /* CommandLine.framework in Frameworks */,
+				66EA157C1D14EC5300CAF239 /* Rainbow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,8 +272,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66FFEFAA1D14D2BB008F2119 /* libCommandLine.dylib in Frameworks */,
-				66FFEFAB1D14D2BB008F2119 /* libRainbow.dylib in Frameworks */,
+				66EA157F1D14EC5B00CAF239 /* CommandLine.framework in Frameworks */,
+				66EA15801D14EC5D00CAF239 /* Rainbow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,8 +281,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66FFEFAE1D14D2C4008F2119 /* libCommandLine.dylib in Frameworks */,
-				66FFEFAF1D14D2C4008F2119 /* libRainbow.dylib in Frameworks */,
+				66EA15831D14EC6B00CAF239 /* CommandLine.framework in Frameworks */,
+				66EA15841D14EC6C00CAF239 /* Rainbow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,8 +290,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66FFEFB01D14D2C8008F2119 /* libCommandLine.dylib in Frameworks */,
-				66FFEFB11D14D2C8008F2119 /* libRainbow.dylib in Frameworks */,
+				66EA15851D14EC7100CAF239 /* CommandLine.framework in Frameworks */,
+				66EA15861D14EC7200CAF239 /* Rainbow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,8 +299,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66FFEFAC1D14D2BF008F2119 /* libCommandLine.dylib in Frameworks */,
-				66FFEFAD1D14D2BF008F2119 /* libRainbow.dylib in Frameworks */,
+				66EA15811D14EC6500CAF239 /* CommandLine.framework in Frameworks */,
+				66EA15821D14EC6700CAF239 /* Rainbow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +447,12 @@
 		66FFEF971D14D277008F2119 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				66EA15731D14EC3700CAF239 /* Rainbow.framework */,
+				66EA15711D14EC3500CAF239 /* CommandLine.framework */,
+				66EA156F1D14EC1200CAF239 /* Rainbow.framework */,
+				66EA156D1D14EC1000CAF239 /* CommandLine.framework */,
+				66EA156B1D14EC0D00CAF239 /* Rainbow.framework */,
+				66EA15691D14EC0B00CAF239 /* CommandLine.framework */,
 				66FFEF981D14D277008F2119 /* libCommandLine.dylib */,
 				66FFEF991D14D277008F2119 /* libRainbow.dylib */,
 			);
@@ -870,7 +882,7 @@
 		66FFEE301D14CAC3008F2119 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 			};
 			name = Debug;
@@ -878,7 +890,7 @@
 		66FFEE311D14CAC3008F2119 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 			};
 			name = Release;
@@ -1934,6 +1946,7 @@
 				66FFEE401D14CAFE008F2119 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66FFEE4C1D14CC33008F2119 /* Build configuration list for PBXNativeTarget "echo" */ = {
 			isa = XCConfigurationList;
@@ -1942,6 +1955,7 @@
 				66FFEE4E1D14CC33008F2119 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66FFEE571D14CC3E008F2119 /* Build configuration list for PBXNativeTarget "env" */ = {
 			isa = XCConfigurationList;
@@ -1950,6 +1964,7 @@
 				66FFEE591D14CC3E008F2119 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66FFEE731D14CCD0008F2119 /* Build configuration list for PBXNativeTarget "false" */ = {
 			isa = XCConfigurationList;
@@ -1958,6 +1973,7 @@
 				66FFEE751D14CCD0008F2119 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66FFEE7E1D14CCDF008F2119 /* Build configuration list for PBXNativeTarget "true" */ = {
 			isa = XCConfigurationList;
@@ -1966,6 +1982,7 @@
 				66FFEE801D14CCDF008F2119 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66FFEE891D14CCF1008F2119 /* Build configuration list for PBXNativeTarget "mkdir" */ = {
 			isa = XCConfigurationList;
@@ -1974,6 +1991,7 @@
 				66FFEE8B1D14CCF1008F2119 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66FFEE941D14CCF9008F2119 /* Build configuration list for PBXNativeTarget "pwd" */ = {
 			isa = XCConfigurationList;
@@ -1982,6 +2000,7 @@
 				66FFEE961D14CCF9008F2119 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66FFEE9F1D14CCFE008F2119 /* Build configuration list for PBXNativeTarget "sleep" */ = {
 			isa = XCConfigurationList;
@@ -1990,6 +2009,7 @@
 				66FFEEA11D14CCFE008F2119 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66FFEEAA1D14CD09008F2119 /* Build configuration list for PBXNativeTarget "uname" */ = {
 			isa = XCConfigurationList;
@@ -1998,6 +2018,7 @@
 				66FFEEAC1D14CD09008F2119 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66FFEEB51D14CD0E008F2119 /* Build configuration list for PBXNativeTarget "wc" */ = {
 			isa = XCConfigurationList;
@@ -2006,6 +2027,7 @@
 				66FFEEB71D14CD0E008F2119 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66FFEEC01D14CD17008F2119 /* Build configuration list for PBXNativeTarget "whoami" */ = {
 			isa = XCConfigurationList;
@@ -2014,6 +2036,7 @@
 				66FFEEC21D14CD17008F2119 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66FFEECB1D14CD1D008F2119 /* Build configuration list for PBXNativeTarget "yes" */ = {
 			isa = XCConfigurationList;
@@ -2022,6 +2045,7 @@
 				66FFEECD1D14CD1D008F2119 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
