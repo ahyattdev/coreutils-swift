@@ -22,7 +22,7 @@ cli.formatOutput = { s, type in
         str = s.lightBlue
     }
     
-    return cli.defaultFormat(str, type: type)
+    return cli.defaultFormat(s: str, type: type)
 }
 
 let help = BoolOption(shortFlag: "h", longFlag: "help", helpMessage: "Display this help and exit")
@@ -30,7 +30,7 @@ let help = BoolOption(shortFlag: "h", longFlag: "help", helpMessage: "Display th
 cli.addOptions(help)
 
 do {
-    try cli.parse(true)
+    try cli.parse(strict: true)
 } catch {
     cli.printUsage(error)
     exit(EXIT_FAILURE)
@@ -45,7 +45,7 @@ var pathname = [Int8]()
 
 getwd(&pathname)
 
-guard let pwd = String.fromCString(pathname) else {
+guard let pwd = String(validatingUTF8: pathname) else {
     fputs("Could not get current working directory\n".red.bold, stderr)
     exit(EXIT_FAILURE)
 }

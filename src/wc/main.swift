@@ -31,7 +31,7 @@ cli.formatOutput = { s, type in
         str = s
     }
 
-    return cli.defaultFormat(str, type: type)
+    return cli.defaultFormat(s: str, type: type)
 }
 
 // Add additional options here
@@ -50,7 +50,7 @@ let help = BoolOption(shortFlag: "h", longFlag: "help", helpMessage: "Display th
 cli.addOptions(byteCount, charCount, lineCount, longestLine, wordCount, help)
 
 do {
-    try cli.parse(true)
+    try cli.parse(strict: true)
 } catch {
     cli.printUsage(error)
     exit(EXIT_FAILURE)
@@ -65,15 +65,15 @@ if help.value {
 
 func countNewlines(string: String) -> Int {
     var count: Int = 0
-    for character in string.utf16 {
-        if NSCharacterSet.newlineCharacterSet().characterIsMember(character) {
+    for character in string.unicodeScalars {
+        if CharacterSet.newlines.contains(character) {
             count += 1
         }
     }
     return count
 }
 
-let fm = NSFileManager.defaultManager()
+let fm = FileManager.default()
 
 WCOptions.ByteCount = byteCount.value
 WCOptions.CharCount = charCount.value
@@ -93,28 +93,28 @@ var longest = (count: 0, lineNumber: -1, fileName: "")
 var total = (chars: 0, lines: 0, words: 0, bytes: 0)
 
 for fileName in cli.unparsedArguments {
-    guard fm.fileExistsAtPath(fileName) else {
+    guard fm.fileExists(atPath: fileName) else {
         fputs("wc: \(fileName): No such file or directory".red.bold + "\n", stderr)
         break
     }
 
-    guard fm.isReadableFileAtPath(fileName) else {
+    guard fm.isReadableFile(atPath: fileName) else {
         fputs("wc: \(fileName): Permission denied".red.bold + "\n", stderr)
         break
     }
 
     // TODO: Dynamically determine the encoding
-    guard let data = fm.contentsAtPath(fileName),
-        let contents = String(data: data, encoding: NSUTF8StringEncoding) else {
+    guard let data = fm.contents(atPath: fileName),
+        let contents = String(data: data, encoding: String.Encoding.utf8) else {
 
         fputs("wc: \(fileName): Failed to load contents of file".red.bold + "\n", stderr)
         break
     }
 
-    let byteCountForFile = data.length
+    let byteCountForFile = data.count
     let charCountForFile = contents.characters.count
-    let lineCountForFile = countNewlines(contents)
-    let wordCountForFile = contents.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).count
+    let lineCountForFile = countNewlines(string: contents)
+    let wordCountForFile = contents.components(separatedBy: CharacterSet.whitespacesAndNewlines).count
 
     total.bytes += byteCountForFile
     total.chars += charCountForFile

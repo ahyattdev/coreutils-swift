@@ -1,5 +1,7 @@
-// FIXME: Implement uname without Foundation
-#if !os(Linux)
+// All code using C strings must be rewritten for Swift 3.0
+
+// FIXME: See above
+#if FALSE
 
 import CommandLine
 import Rainbow
@@ -26,7 +28,7 @@ cli.formatOutput = { s, type in
         str = s
     }
 
-    return cli.defaultFormat(str, type: type)
+    return cli.defaultFormat(s: str, type: type)
 }
 
 let all = BoolOption(shortFlag: "a", longFlag: "all", helpMessage: "Print all unformation in the folling order, without -p and -i if they are unknown")
@@ -53,7 +55,7 @@ let options = [all, kernel, nodename, release, version, machine, processor, hard
 cli.addOptions(options)
 
 do {
-    try cli.parse(true)
+    try cli.parse(strict: true)
 } catch {
     cli.printUsage(error)
     exit(EXIT_FAILURE)
@@ -106,56 +108,54 @@ func addInfo(str: String) {
     info += str + " ".green.bold
 }
 
-let pi = NSProcessInfo.processInfo()
+let pi = ProcessInfo.processInfo()
 var unameInfo: utsname = utsname()
 uname(&unameInfo)
 
 if Options.Kernel {
-    guard let kernelName = withUnsafePointer(&unameInfo.sysname, {
-        String.fromCString(UnsafePointer($0))
-    }) else {
+    guard let kernelName = String(validatingUTF8: unameInfo.sysname) else {
         fputs("Failed to get the kernel name\n", stderr)
         exit(EXIT_FAILURE)
     }
-    addInfo(kernelName)
+    addInfo(str: kernelName)
 }
 
 if Options.Nodename {
-    guard let hostname = NSHost.currentHost().localizedName else {
+    guard let hostname = Host.current().localizedName else {
         fputs("Failed to get the network node name\n", stderr)
         exit(EXIT_FAILURE)
     }
-    addInfo(hostname)
+    addInfo(str: hostname)
 }
 
 if Options.Release {
     guard let kernelRelease = withUnsafePointer(&unameInfo.release, {
-        String.fromCString(UnsafePointer($0))
+        String(validatingUTF8: $0)
     }) else {
         fputs("Failed to get the kernel release\n", stderr)
         exit(EXIT_FAILURE)
     }
-    addInfo(kernelRelease)
+    addInfo(str: kernelRelease)
 }
 
 if Options.Version {
     guard let kernelVersion = withUnsafePointer(&unameInfo.version, {
-        String.fromCString(UnsafePointer($0))
+        String(validatingUTF8: $0)
     }) else {
         fputs("Failed to get the kernel version\n", stderr)
         exit(EXIT_FAILURE)
     }
-    addInfo(kernelVersion)
+    addInfo(str: kernelVersion)
 }
 
 if Options.Machine {
     guard let machine = withUnsafePointer(&unameInfo.machine, {
-        String.fromCString(UnsafePointer($0))
+        String(validatingUTF8: $0)
     }) else {
         fputs("Failed to get the machine description\n", stderr)
         exit(EXIT_FAILURE)
     }
-    addInfo(machine)
+    addInfo(str: machine)
 }
 
 if Options.Processor {
@@ -165,7 +165,7 @@ if Options.Processor {
         exit(EXIT_FAILURE)
     }
 
-    addInfo(processor)
+    addInfo(str: processor)
 }
 
 if Options.Hardware {
@@ -176,11 +176,11 @@ if Options.Hardware {
     sysctlbyname("hw.cputype", &cputype, &cs, nil, 0)
     guard let ai: UnsafePointer<NXArchInfo> = NXGetArchInfoFromCpuType(cputype, CPU_SUBTYPE_INTEL_MODEL_ALL),
 
-        let name = String.fromCString(ai.memory.name) else {
+    let name = String(validatingUTF8: ai.pointee.name) else {
         fputs("Failed to get the CPU type\n", stderr)
         exit(EXIT_FAILURE)
     }
-    addInfo(name)
+    addInfo(str: name)
 }
 
 // The GNU Coreutils uname command determines this at compiler time
@@ -190,17 +190,10 @@ if Options.Hardware {
 // based on the Swift OS compiler directive
 if Options.OS {
     // Default to what NSProcessInfo returns, it is NSMachOperatingSystem on Darwin
-    var osname: String = pi.operatingSystemName()
+    var osname: String = pi.operatingSystemVersionString
 
-    #if os(OSX)
-        osname = "Mac OS X"
-    #elseif os(iOS)
-        osname = "iOS"
-    #elseif os(Linux)
-        osname = "Linux"
-    #endif
 
-    addInfo(osname)
+    addInfo(str: osname)
 }
 
 print(info)

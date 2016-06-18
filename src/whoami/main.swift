@@ -22,7 +22,7 @@ cli.formatOutput = { s, type in
         str = s
     }
     
-    return cli.defaultFormat(str, type: type)
+    return cli.defaultFormat(s: str, type: type)
 }
 
 let help = BoolOption(shortFlag: "h", longFlag: "help",
@@ -31,7 +31,7 @@ let help = BoolOption(shortFlag: "h", longFlag: "help",
 cli.addOptions(help)
 
 do {
-    try cli.parse(true)
+    try cli.parse(strict: true)
 } catch {
     cli.printUsage(error)
     exit(EXIT_FAILURE)
@@ -48,9 +48,9 @@ if help.value {
 
 let pwuid = getpwuid(getuid())
 
-let userString = String.fromCString(pwuid.memory.pw_name)
+let userString = String(validatingUTF8: (pwuid?.pointee.pw_name)!)
 
-guard let userString = String.fromCString(pwuid.memory.pw_name) else {
+guard let userString = String(validatingUTF8: (pwuid?.pointee.pw_name)!) else {
     fputs("Error: could not get username".red.bold, stderr)
     exit(EXIT_FAILURE)
 }

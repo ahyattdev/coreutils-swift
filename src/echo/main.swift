@@ -23,7 +23,7 @@ cli.formatOutput = { s, type in
         str = s
     }
     
-    return cli.defaultFormat(str, type: type)
+    return cli.defaultFormat(s: str, type: type)
 }
 
 // Add additional options here
@@ -35,7 +35,7 @@ let help = BoolOption(shortFlag: "h", longFlag: "help", helpMessage: "Display th
 cli.addOptions(noNewline, help)
 
 do {
-    try cli.parse(true)
+    try cli.parse(strict: true)
 } catch {
     cli.printUsage(error)
     exit(EXIT_FAILURE)

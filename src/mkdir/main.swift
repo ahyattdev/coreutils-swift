@@ -22,7 +22,7 @@ cli.formatOutput = { s, type in
         str = s.lightBlue
     }
     
-    return cli.defaultFormat(str, type: type)
+    return cli.defaultFormat(s: str, type: type)
 }
 
 let mode = StringOption(shortFlag: "m", longFlag: "mode", helpMessage: "Set file mode (as in chmod), not a=rwx - umask")
@@ -33,7 +33,7 @@ let help = BoolOption(shortFlag: "h", longFlag: "help", helpMessage: "Display th
 cli.addOptions(mode, parents, verbose, help)
 
 do {
-    try cli.parse(true)
+    try cli.parse(strict: true)
 } catch {
     cli.printUsage(error)
     exit(EXIT_FAILURE)

@@ -1,16 +1,6 @@
-// FIXME: Implement env without Foundation
-#if !os(Linux)
-
 import Foundation
-import Rainbow
-
-#if os(OSX)
-    import Darwin
-#elseif os(Linux)
-    import Glibc
-#endif
-
 import CommandLine
+import Rainbow
 
 let cli = CommandLine()
 
@@ -27,7 +17,7 @@ cli.formatOutput = { s, type in
         str = s
     }
 
-    return cli.defaultFormat(str, type: type)
+    return cli.defaultFormat(s: str, type: type)
 }
 
 let ignore = BoolOption(shortFlag: "i", longFlag: "ignore-enviornment", helpMessage: "Start with an empty enviornment")
@@ -42,7 +32,7 @@ let help = BoolOption(shortFlag: "H", longFlag: "help", helpMessage: "Display th
 cli.addOptions(ignore, null, unset, help)
 
 do {
-    try cli.parse(true)
+    try cli.parse(strict: true)
 } catch {
     cli.printUsage(error)
     exit(EXIT_FAILURE)
@@ -63,7 +53,7 @@ if help.value {
 
 // Clear if necessary
 
-var envvars = NSProcessInfo.processInfo().environment
+var envvars = ProcessInfo.processInfo().environment
 
 if Flags.Ignore {
     for var envvar in envvars {
@@ -77,26 +67,23 @@ var command = ""
 
 for arg : String in cli.unparsedArguments {
     // TODO: Check that the env var is more valid
-    if arg.componentsSeparatedByString("=").count == 2  && command.isEmpty {
-        setenv(arg.componentsSeparatedByString("=")[0], arg.componentsSeparatedByString("=")[1], 1)
+    if arg.components(separatedBy: "=").count == 2  && command.isEmpty {
+        setenv(arg.components(separatedBy: "=")[0], arg.components(separatedBy: "=")[1], 1)
     } else {
         command += arg + ""
     }
 
     if !command.isEmpty {
-        exit(system(command))
+        // FIXME: The C fucntion system() is unavailable in Swift 3.0???
+        //exit(system(command))
     }
 }
 
 // TODO: Sort them alphabetically
-for env in NSProcessInfo.processInfo().environment {
+for env in ProcessInfo.processInfo().environment {
     var seperator = "\n"
     if Flags.Null {
         seperator = "\0"
     }
     print(env.0.green + "=".cyan + env.1.magenta, separator: "", terminator: seperator)
 }
-
-exit(EXIT_SUCCESS)
-
-#endif
