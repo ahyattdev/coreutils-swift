@@ -6,6 +6,7 @@ It is dependent on the `Foundation` and the `Darwin` or the `Glibc` Swift module
 ## Commands that we have worked on
 | Tool      | Completion    |
 | --------- | ------------- |
+| date      | 25 %          |
 | echo      | **Done**      |
 | env       | **Done**      |
 | false     | **Done**      |
