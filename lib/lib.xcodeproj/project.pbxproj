@@ -7,29 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		66EA15871D14EC8D00CAF239 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 66EA15561D14E87A00CAF239 /* Info.plist */; };
-		66EA15881D14EC8D00CAF239 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF561D14D01F008F2119 /* CommandLine.swift */; };
-		66EA15891D14EC8D00CAF239 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF571D14D01F008F2119 /* Option.swift */; };
-		66EA158A1D14EC8D00CAF239 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF581D14D01F008F2119 /* StringExtensions.swift */; };
-		66EA158B1D14EC9100CAF239 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 66EA15631D14E88200CAF239 /* Info.plist */; };
-		66EA158C1D14EC9100CAF239 /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF6A1D14D093008F2119 /* BackgroundColor.swift */; };
-		66EA158D1D14EC9100CAF239 /* CodesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF6B1D14D093008F2119 /* CodesParser.swift */; };
-		66EA158E1D14EC9100CAF239 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF6C1D14D093008F2119 /* Color.swift */; };
-		66EA158F1D14EC9100CAF239 /* ControlCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF6D1D14D093008F2119 /* ControlCode.swift */; };
-		66EA15901D14EC9100CAF239 /* ModesExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF6F1D14D093008F2119 /* ModesExtractor.swift */; };
-		66EA15911D14EC9100CAF239 /* OutputTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF701D14D093008F2119 /* OutputTarget.swift */; };
-		66EA15921D14EC9100CAF239 /* Rainbow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF711D14D093008F2119 /* Rainbow.swift */; };
-		66EA15931D14EC9100CAF239 /* String+Rainbow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF721D14D093008F2119 /* String+Rainbow.swift */; };
-		66EA15941D14EC9100CAF239 /* StringGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF731D14D093008F2119 /* StringGenerator.swift */; };
-		66EA15951D14EC9100CAF239 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF741D14D093008F2119 /* Style.swift */; };
-		66EA15961D14EC9100CAF239 /* XcodeColorsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF751D14D093008F2119 /* XcodeColorsSupport.swift */; };
+		665320231D15F918004F107A /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF561D14D01F008F2119 /* CommandLine.swift */; };
+		665320241D15F918004F107A /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF571D14D01F008F2119 /* Option.swift */; };
+		665320251D15F918004F107A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF581D14D01F008F2119 /* StringExtensions.swift */; };
+		665320331D15F92F004F107A /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF6A1D14D093008F2119 /* BackgroundColor.swift */; };
+		665320341D15F92F004F107A /* CodesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF6B1D14D093008F2119 /* CodesParser.swift */; };
+		665320351D15F92F004F107A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF6C1D14D093008F2119 /* Color.swift */; };
+		665320361D15F92F004F107A /* ControlCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF6D1D14D093008F2119 /* ControlCode.swift */; };
+		665320371D15F92F004F107A /* ModesExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF6F1D14D093008F2119 /* ModesExtractor.swift */; };
+		665320381D15F92F004F107A /* OutputTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF701D14D093008F2119 /* OutputTarget.swift */; };
+		665320391D15F92F004F107A /* Rainbow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF711D14D093008F2119 /* Rainbow.swift */; };
+		6653203A1D15F92F004F107A /* String+Rainbow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF721D14D093008F2119 /* String+Rainbow.swift */; };
+		6653203B1D15F92F004F107A /* StringGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF731D14D093008F2119 /* StringGenerator.swift */; };
+		6653203C1D15F92F004F107A /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF741D14D093008F2119 /* Style.swift */; };
+		6653203D1D15F92F004F107A /* XcodeColorsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEF751D14D093008F2119 /* XcodeColorsSupport.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		66EA15521D14E87A00CAF239 /* CommandLine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommandLine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		66EA15561D14E87A00CAF239 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		66EA155F1D14E88200CAF239 /* Rainbow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Rainbow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		66EA15631D14E88200CAF239 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6653201A1D15F901004F107A /* libCommandLine.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libCommandLine.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		6653202A1D15F924004F107A /* libRainbow.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libRainbow.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		66FFEF561D14D01F008F2119 /* CommandLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
 		66FFEF571D14D01F008F2119 /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
 		66FFEF581D14D01F008F2119 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -47,14 +43,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		66EA154E1D14E87900CAF239 /* Frameworks */ = {
+		665320171D15F901004F107A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		66EA155B1D14E88200CAF239 /* Frameworks */ = {
+		665320271D15F924004F107A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -76,8 +72,8 @@
 		66FFEF4C1D14CFDA008F2119 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				66EA15521D14E87A00CAF239 /* CommandLine.framework */,
-				66EA155F1D14E88200CAF239 /* Rainbow.framework */,
+				6653201A1D15F901004F107A /* libCommandLine.dylib */,
+				6653202A1D15F924004F107A /* libRainbow.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,7 +81,6 @@
 		66FFEF551D14D01F008F2119 /* CommandLine */ = {
 			isa = PBXGroup;
 			children = (
-				66EA15561D14E87A00CAF239 /* Info.plist */,
 				66FFEF561D14D01F008F2119 /* CommandLine.swift */,
 				66FFEF571D14D01F008F2119 /* Option.swift */,
 				66FFEF581D14D01F008F2119 /* StringExtensions.swift */,
@@ -96,7 +91,6 @@
 		66FFEF691D14D093008F2119 /* Rainbow */ = {
 			isa = PBXGroup;
 			children = (
-				66EA15631D14E88200CAF239 /* Info.plist */,
 				66FFEF6A1D14D093008F2119 /* BackgroundColor.swift */,
 				66FFEF6B1D14D093008F2119 /* CodesParser.swift */,
 				66FFEF6C1D14D093008F2119 /* Color.swift */,
@@ -115,14 +109,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		66EA154F1D14E87900CAF239 /* Headers */ = {
+		665320181D15F901004F107A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		66EA155C1D14E88200CAF239 /* Headers */ = {
+		665320281D15F924004F107A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -132,14 +126,13 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		66EA15511D14E87900CAF239 /* CommandLine */ = {
+		665320191D15F901004F107A /* CommandLine */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 66EA15571D14E87A00CAF239 /* Build configuration list for PBXNativeTarget "CommandLine" */;
+			buildConfigurationList = 665320201D15F901004F107A /* Build configuration list for PBXNativeTarget "CommandLine" */;
 			buildPhases = (
-				66EA154D1D14E87900CAF239 /* Sources */,
-				66EA154E1D14E87900CAF239 /* Frameworks */,
-				66EA154F1D14E87900CAF239 /* Headers */,
-				66EA15501D14E87900CAF239 /* Resources */,
+				665320161D15F901004F107A /* Sources */,
+				665320171D15F901004F107A /* Frameworks */,
+				665320181D15F901004F107A /* Headers */,
 			);
 			buildRules = (
 			);
@@ -147,17 +140,16 @@
 			);
 			name = CommandLine;
 			productName = CommandLine;
-			productReference = 66EA15521D14E87A00CAF239 /* CommandLine.framework */;
-			productType = "com.apple.product-type.framework";
+			productReference = 6653201A1D15F901004F107A /* libCommandLine.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
 		};
-		66EA155E1D14E88200CAF239 /* Rainbow */ = {
+		665320291D15F924004F107A /* Rainbow */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 66EA15641D14E88200CAF239 /* Build configuration list for PBXNativeTarget "Rainbow" */;
+			buildConfigurationList = 665320301D15F925004F107A /* Build configuration list for PBXNativeTarget "Rainbow" */;
 			buildPhases = (
-				66EA155A1D14E88200CAF239 /* Sources */,
-				66EA155B1D14E88200CAF239 /* Frameworks */,
-				66EA155C1D14E88200CAF239 /* Headers */,
-				66EA155D1D14E88200CAF239 /* Resources */,
+				665320261D15F924004F107A /* Sources */,
+				665320271D15F924004F107A /* Frameworks */,
+				665320281D15F924004F107A /* Headers */,
 			);
 			buildRules = (
 			);
@@ -165,8 +157,8 @@
 			);
 			name = Rainbow;
 			productName = Rainbow;
-			productReference = 66EA155F1D14E88200CAF239 /* Rainbow.framework */;
-			productType = "com.apple.product-type.framework";
+			productReference = 6653202A1D15F924004F107A /* libRainbow.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
 
@@ -176,13 +168,13 @@
 			attributes = {
 				LastUpgradeCheck = 0800;
 				TargetAttributes = {
-					66EA15511D14E87900CAF239 = {
+					665320191D15F901004F107A = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = TGZ526AV87;
 						DevelopmentTeamName = "Andrew Hyatt (Personal Team)";
 						ProvisioningStyle = Automatic;
 					};
-					66EA155E1D14E88200CAF239 = {
+					665320291D15F924004F107A = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = TGZ526AV87;
 						DevelopmentTeamName = "Andrew Hyatt (Personal Team)";
@@ -202,64 +194,45 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				66EA15511D14E87900CAF239 /* CommandLine */,
-				66EA155E1D14E88200CAF239 /* Rainbow */,
+				665320191D15F901004F107A /* CommandLine */,
+				665320291D15F924004F107A /* Rainbow */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		66EA15501D14E87900CAF239 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				66EA15871D14EC8D00CAF239 /* Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		66EA155D1D14E88200CAF239 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				66EA158B1D14EC9100CAF239 /* Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		66EA154D1D14E87900CAF239 /* Sources */ = {
+		665320161D15F901004F107A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66EA158A1D14EC8D00CAF239 /* StringExtensions.swift in Sources */,
-				66EA15891D14EC8D00CAF239 /* Option.swift in Sources */,
-				66EA15881D14EC8D00CAF239 /* CommandLine.swift in Sources */,
+				665320251D15F918004F107A /* StringExtensions.swift in Sources */,
+				665320241D15F918004F107A /* Option.swift in Sources */,
+				665320231D15F918004F107A /* CommandLine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		66EA155A1D14E88200CAF239 /* Sources */ = {
+		665320261D15F924004F107A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66EA158F1D14EC9100CAF239 /* ControlCode.swift in Sources */,
-				66EA15941D14EC9100CAF239 /* StringGenerator.swift in Sources */,
-				66EA158C1D14EC9100CAF239 /* BackgroundColor.swift in Sources */,
-				66EA15901D14EC9100CAF239 /* ModesExtractor.swift in Sources */,
-				66EA15931D14EC9100CAF239 /* String+Rainbow.swift in Sources */,
-				66EA158D1D14EC9100CAF239 /* CodesParser.swift in Sources */,
-				66EA158E1D14EC9100CAF239 /* Color.swift in Sources */,
-				66EA15911D14EC9100CAF239 /* OutputTarget.swift in Sources */,
-				66EA15921D14EC9100CAF239 /* Rainbow.swift in Sources */,
-				66EA15961D14EC9100CAF239 /* XcodeColorsSupport.swift in Sources */,
-				66EA15951D14EC9100CAF239 /* Style.swift in Sources */,
+				665320361D15F92F004F107A /* ControlCode.swift in Sources */,
+				6653203B1D15F92F004F107A /* StringGenerator.swift in Sources */,
+				665320331D15F92F004F107A /* BackgroundColor.swift in Sources */,
+				665320371D15F92F004F107A /* ModesExtractor.swift in Sources */,
+				6653203A1D15F92F004F107A /* String+Rainbow.swift in Sources */,
+				665320341D15F92F004F107A /* CodesParser.swift in Sources */,
+				665320351D15F92F004F107A /* Color.swift in Sources */,
+				665320381D15F92F004F107A /* OutputTarget.swift in Sources */,
+				665320391D15F92F004F107A /* Rainbow.swift in Sources */,
+				6653203D1D15F92F004F107A /* XcodeColorsSupport.swift in Sources */,
+				6653203C1D15F92F004F107A /* Style.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		66EA15581D14E87A00CAF239 /* Debug */ = {
+		665320211D15F901004F107A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -278,18 +251,14 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_VERSION = A;
+				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -304,25 +273,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = CommandLine/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.github.ahyattdev.coreutils-swift.CommandLine";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		66EA15591D14E87A00CAF239 /* Release */ = {
+		665320221D15F901004F107A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -341,18 +300,14 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
+				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -361,23 +316,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = CommandLine/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.github.ahyattdev.coreutils-swift.CommandLine";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		66EA15651D14E88200CAF239 /* Debug */ = {
+		665320311D15F925004F107A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -396,18 +342,14 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_VERSION = A;
+				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -422,25 +364,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Rainbow/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.github.ahyattdev.coreutils-swift.Rainbow";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		66EA15661D14E88200CAF239 /* Release */ = {
+		665320321D15F925004F107A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -459,18 +391,14 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
+				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -479,54 +407,49 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Rainbow/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.github.ahyattdev.coreutils-swift.Rainbow";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
 		66FFEF421D14CFB6008F2119 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CODE_SIGN_IDENTITY = "$(inherited)";
 			};
 			name = Debug;
 		};
 		66FFEF431D14CFB6008F2119 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CODE_SIGN_IDENTITY = "$(inherited)";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		66EA15571D14E87A00CAF239 /* Build configuration list for PBXNativeTarget "CommandLine" */ = {
+		665320201D15F901004F107A /* Build configuration list for PBXNativeTarget "CommandLine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				66EA15581D14E87A00CAF239 /* Debug */,
-				66EA15591D14E87A00CAF239 /* Release */,
+				665320211D15F901004F107A /* Debug */,
+				665320221D15F901004F107A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		66EA15641D14E88200CAF239 /* Build configuration list for PBXNativeTarget "Rainbow" */ = {
+		665320301D15F925004F107A /* Build configuration list for PBXNativeTarget "Rainbow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				66EA15651D14E88200CAF239 /* Debug */,
-				66EA15661D14E88200CAF239 /* Release */,
+				665320311D15F925004F107A /* Debug */,
+				665320321D15F925004F107A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66FFEF411D14CFB6008F2119 /* Build configuration list for PBXProject "lib" */ = {
 			isa = XCConfigurationList;

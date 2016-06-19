@@ -6,21 +6,50 @@
 	objectVersion = 47;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		6653206F1D15FA95004F107A /* coreutils-swift */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 665320701D15FA95004F107A /* Build configuration list for PBXAggregateTarget "coreutils-swift" */;
+			buildPhases = (
+				665320731D15FB02004F107A /* CopyFiles */,
+				665320761D15FBC0004F107A /* CopyFiles */,
+			);
+			dependencies = (
+			);
+			name = "coreutils-swift";
+			productName = "coreutils-swift";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
-		66EA15401D14E82800CAF239 /* ls in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEE431D14CB47008F2119 /* ls */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		66EA15411D14E82800CAF239 /* echo in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEE5D1D14CC45008F2119 /* echo */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		66EA15421D14E82800CAF239 /* env in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEE5F1D14CC45008F2119 /* env */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		66EA15431D14E82800CAF239 /* false in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF111D14CF66008F2119 /* false */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		66EA15441D14E82800CAF239 /* true in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF191D14CF66008F2119 /* true */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		66EA15451D14E82800CAF239 /* mkdir in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF131D14CF66008F2119 /* mkdir */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		66EA15461D14E82800CAF239 /* pwd in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF151D14CF66008F2119 /* pwd */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		66EA15471D14E82800CAF239 /* sleep in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF171D14CF66008F2119 /* sleep */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		66EA15481D14E82800CAF239 /* uname in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF1B1D14CF66008F2119 /* uname */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		66EA15491D14E82800CAF239 /* wc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF1F1D14CF66008F2119 /* wc */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		66EA154A1D14E82800CAF239 /* whoami in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF211D14CF66008F2119 /* whoami */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		66EA154B1D14E82800CAF239 /* yes in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF1D1D14CF66008F2119 /* yes */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		66EA15671D14E91E00CAF239 /* libCommandLine.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF851D14D0A8008F2119 /* libCommandLine.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		66EA15681D14E91E00CAF239 /* libRainbow.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF871D14D0A8008F2119 /* libRainbow.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6608FA351D160169007D2431 /* libCommandLine.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF851D14D0A8008F2119 /* libCommandLine.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6608FA361D160169007D2431 /* libRainbow.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF871D14D0A8008F2119 /* libRainbow.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6608FA381D160178007D2431 /* ls in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEE431D14CB47008F2119 /* ls */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6608FA391D160178007D2431 /* echo in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEE5D1D14CC45008F2119 /* echo */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6608FA3A1D160178007D2431 /* env in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEE5F1D14CC45008F2119 /* env */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6608FA3B1D160178007D2431 /* false in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF111D14CF66008F2119 /* false */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6608FA3C1D160178007D2431 /* true in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF191D14CF66008F2119 /* true */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6608FA3D1D160178007D2431 /* mkdir in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF131D14CF66008F2119 /* mkdir */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6608FA3E1D160178007D2431 /* pwd in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF151D14CF66008F2119 /* pwd */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6608FA3F1D160178007D2431 /* sleep in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF171D14CF66008F2119 /* sleep */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6608FA401D160178007D2431 /* uname in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF1B1D14CF66008F2119 /* uname */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6608FA411D160178007D2431 /* wc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF1F1D14CF66008F2119 /* wc */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6608FA421D160178007D2431 /* whoami in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF211D14CF66008F2119 /* whoami */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6608FA431D160178007D2431 /* yes in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF1D1D14CF66008F2119 /* yes */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		665320741D15FB4C004F107A /* libCommandLine.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF851D14D0A8008F2119 /* libCommandLine.dylib */; };
+		665320751D15FB4E004F107A /* libRainbow.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF871D14D0A8008F2119 /* libRainbow.dylib */; };
+		665320771D15FBDB004F107A /* ls in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEE431D14CB47008F2119 /* ls */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		665320781D15FBDB004F107A /* echo in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEE5D1D14CC45008F2119 /* echo */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		665320791D15FBDB004F107A /* env in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEE5F1D14CC45008F2119 /* env */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6653207A1D15FBDB004F107A /* false in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF111D14CF66008F2119 /* false */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6653207B1D15FBDB004F107A /* true in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF191D14CF66008F2119 /* true */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6653207C1D15FBDB004F107A /* mkdir in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF131D14CF66008F2119 /* mkdir */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6653207D1D15FBDB004F107A /* pwd in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF151D14CF66008F2119 /* pwd */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6653207E1D15FBDB004F107A /* sleep in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF171D14CF66008F2119 /* sleep */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6653207F1D15FBDB004F107A /* uname in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF1B1D14CF66008F2119 /* uname */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		665320801D15FBDB004F107A /* wc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF1F1D14CF66008F2119 /* wc */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		665320811D15FBDB004F107A /* whoami in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF211D14CF66008F2119 /* whoami */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		665320821D15FBDB004F107A /* yes in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66FFEF1D1D14CF66008F2119 /* yes */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,43 +154,75 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		66EA153F1D14E80800CAF239 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 6;
-			files = (
-				66EA15401D14E82800CAF239 /* ls in CopyFiles */,
-				66EA15411D14E82800CAF239 /* echo in CopyFiles */,
-				66EA15421D14E82800CAF239 /* env in CopyFiles */,
-				66EA15431D14E82800CAF239 /* false in CopyFiles */,
-				66EA15441D14E82800CAF239 /* true in CopyFiles */,
-				66EA15451D14E82800CAF239 /* mkdir in CopyFiles */,
-				66EA15461D14E82800CAF239 /* pwd in CopyFiles */,
-				66EA15471D14E82800CAF239 /* sleep in CopyFiles */,
-				66EA15481D14E82800CAF239 /* uname in CopyFiles */,
-				66EA15491D14E82800CAF239 /* wc in CopyFiles */,
-				66EA154A1D14E82800CAF239 /* whoami in CopyFiles */,
-				66EA154B1D14E82800CAF239 /* yes in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		66EA154C1D14E83800CAF239 /* CopyFiles */ = {
+		6608FA0B1D160071007D2431 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				66EA15671D14E91E00CAF239 /* libCommandLine.dylib in CopyFiles */,
-				66EA15681D14E91E00CAF239 /* libRainbow.dylib in CopyFiles */,
+				6608FA351D160169007D2431 /* libCommandLine.dylib in CopyFiles */,
+				6608FA361D160169007D2431 /* libRainbow.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6608FA371D160170007D2431 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				6608FA381D160178007D2431 /* ls in CopyFiles */,
+				6608FA391D160178007D2431 /* echo in CopyFiles */,
+				6608FA3A1D160178007D2431 /* env in CopyFiles */,
+				6608FA3B1D160178007D2431 /* false in CopyFiles */,
+				6608FA3C1D160178007D2431 /* true in CopyFiles */,
+				6608FA3D1D160178007D2431 /* mkdir in CopyFiles */,
+				6608FA3E1D160178007D2431 /* pwd in CopyFiles */,
+				6608FA3F1D160178007D2431 /* sleep in CopyFiles */,
+				6608FA401D160178007D2431 /* uname in CopyFiles */,
+				6608FA411D160178007D2431 /* wc in CopyFiles */,
+				6608FA421D160178007D2431 /* whoami in CopyFiles */,
+				6608FA431D160178007D2431 /* yes in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		665320731D15FB02004F107A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "coreutils-swift/lib";
+			dstSubfolderSpec = 1;
+			files = (
+				665320741D15FB4C004F107A /* libCommandLine.dylib in CopyFiles */,
+				665320751D15FB4E004F107A /* libRainbow.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		665320761D15FBC0004F107A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "coreutils-swift/bin";
+			dstSubfolderSpec = 1;
+			files = (
+				665320771D15FBDB004F107A /* ls in CopyFiles */,
+				665320781D15FBDB004F107A /* echo in CopyFiles */,
+				665320791D15FBDB004F107A /* env in CopyFiles */,
+				6653207A1D15FBDB004F107A /* false in CopyFiles */,
+				6653207B1D15FBDB004F107A /* true in CopyFiles */,
+				6653207C1D15FBDB004F107A /* mkdir in CopyFiles */,
+				6653207D1D15FBDB004F107A /* pwd in CopyFiles */,
+				6653207E1D15FBDB004F107A /* sleep in CopyFiles */,
+				6653207F1D15FBDB004F107A /* uname in CopyFiles */,
+				665320801D15FBDB004F107A /* wc in CopyFiles */,
+				665320811D15FBDB004F107A /* whoami in CopyFiles */,
+				665320821D15FBDB004F107A /* yes in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		66EA15341D14E75E00CAF239 /* coreutils-swift.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "coreutils-swift.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
-		66EA15361D14E75F00CAF239 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "coreutils-swift/Info.plist"; sourceTree = "<group>"; };
+		6608FA051D160052007D2431 /* utils.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = utils.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		6608FA071D160052007D2431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66FFEE321D14CAC3008F2119 /* src.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = src.xcodeproj; path = src/src.xcodeproj; sourceTree = "<group>"; };
 		66FFEF441D14CFB6008F2119 /* lib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = lib.xcodeproj; path = lib/lib.xcodeproj; sourceTree = "<group>"; };
 		6A295E5C1CE2AD420021075F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -169,7 +230,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		66EA15311D14E75E00CAF239 /* Frameworks */ = {
+		6608FA021D160052007D2431 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -179,6 +240,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6608FA061D160052007D2431 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				6608FA071D160052007D2431 /* Info.plist */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
 		66FFEE331D14CAC3008F2119 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,30 +283,31 @@
 				66FFEE321D14CAC3008F2119 /* src.xcodeproj */,
 				6A295E5D1CE2AFA60021075F /* CONTRIBUTING.md */,
 				6A295E5C1CE2AD420021075F /* README.md */,
-				66EA15341D14E75E00CAF239 /* coreutils-swift.bundle */,
-				66EA15361D14E75F00CAF239 /* Info.plist */,
+				6608FA051D160052007D2431 /* utils.bundle */,
+				6608FA061D160052007D2431 /* utils */,
 			);
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		66EA15331D14E75E00CAF239 /* coreutils-swift */ = {
+		6608FA041D160052007D2431 /* utils */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 66EA15371D14E75F00CAF239 /* Build configuration list for PBXNativeTarget "coreutils-swift" */;
+			buildConfigurationList = 6608FA081D160052007D2431 /* Build configuration list for PBXNativeTarget "utils" */;
 			buildPhases = (
-				66EA15301D14E75E00CAF239 /* Sources */,
-				66EA15311D14E75E00CAF239 /* Frameworks */,
-				66EA153F1D14E80800CAF239 /* CopyFiles */,
-				66EA154C1D14E83800CAF239 /* CopyFiles */,
+				6608FA011D160052007D2431 /* Sources */,
+				6608FA021D160052007D2431 /* Frameworks */,
+				6608FA031D160052007D2431 /* Resources */,
+				6608FA0B1D160071007D2431 /* CopyFiles */,
+				6608FA371D160170007D2431 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "coreutils-swift";
-			productName = "coreutils-swift";
-			productReference = 66EA15341D14E75E00CAF239 /* coreutils-swift.bundle */;
+			name = utils;
+			productName = utils;
+			productReference = 6608FA051D160052007D2431 /* utils.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -250,7 +320,13 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Andrew Hyatt";
 				TargetAttributes = {
-					66EA15331D14E75E00CAF239 = {
+					6608FA041D160052007D2431 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = TGZ526AV87;
+						DevelopmentTeamName = "Andrew Hyatt (Personal Team)";
+						ProvisioningStyle = Automatic;
+					};
+					6653206F1D15FA95004F107A = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = TGZ526AV87;
 						DevelopmentTeamName = "Andrew Hyatt (Personal Team)";
@@ -280,7 +356,8 @@
 			);
 			projectRoot = "";
 			targets = (
-				66EA15331D14E75E00CAF239 /* coreutils-swift */,
+				6653206F1D15FA95004F107A /* coreutils-swift */,
+				6608FA041D160052007D2431 /* utils */,
 			);
 		};
 /* End PBXProject section */
@@ -386,8 +463,18 @@
 		};
 /* End PBXReferenceProxy section */
 
+/* Begin PBXResourcesBuildPhase section */
+		6608FA031D160052007D2431 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		66EA15301D14E75E00CAF239 /* Sources */ = {
+		6608FA011D160052007D2431 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -397,9 +484,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		66EA15381D14E75F00CAF239 /* Debug */ = {
+		6608FA091D160052007D2431 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -416,7 +504,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -436,12 +524,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "coreutils-swift/Info.plist";
+				INFOPLIST_FILE = utils/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = "@executale_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.github.ahyattdev.coreutils-swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.ahyattdev.coreutils-swift.utils";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -449,9 +538,10 @@
 			};
 			name = Debug;
 		};
-		66EA15391D14E75F00CAF239 /* Release */ = {
+		6608FA0A1D160052007D2431 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -468,7 +558,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -482,15 +572,30 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "coreutils-swift/Info.plist";
+				INFOPLIST_FILE = utils/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = "@executale_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.github.ahyattdev.coreutils-swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.ahyattdev.coreutils-swift.utils";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		665320711D15FA95004F107A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		665320721D15FA95004F107A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -509,13 +614,23 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		66EA15371D14E75F00CAF239 /* Build configuration list for PBXNativeTarget "coreutils-swift" */ = {
+		6608FA081D160052007D2431 /* Build configuration list for PBXNativeTarget "utils" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				66EA15381D14E75F00CAF239 /* Debug */,
-				66EA15391D14E75F00CAF239 /* Release */,
+				6608FA091D160052007D2431 /* Debug */,
+				6608FA0A1D160052007D2431 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		665320701D15FA95004F107A /* Build configuration list for PBXAggregateTarget "coreutils-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				665320711D15FA95004F107A /* Debug */,
+				665320721D15FA95004F107A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6AB5350F1CDE8A5C0086552A /* Build configuration list for PBXProject "coreutils-swift" */ = {
 			isa = XCConfigurationList;

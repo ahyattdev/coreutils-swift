@@ -7,30 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		66EA156A1D14EC0B00CAF239 /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15691D14EC0B00CAF239 /* CommandLine.framework */; };
-		66EA156C1D14EC0D00CAF239 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA156B1D14EC0D00CAF239 /* Rainbow.framework */; };
-		66EA156E1D14EC1000CAF239 /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA156D1D14EC1000CAF239 /* CommandLine.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		66EA15701D14EC1200CAF239 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA156F1D14EC1200CAF239 /* Rainbow.framework */; };
-		66EA15721D14EC3500CAF239 /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15711D14EC3500CAF239 /* CommandLine.framework */; };
-		66EA15741D14EC3700CAF239 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15731D14EC3700CAF239 /* Rainbow.framework */; };
-		66EA15751D14EC3C00CAF239 /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15711D14EC3500CAF239 /* CommandLine.framework */; };
-		66EA15761D14EC3D00CAF239 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15731D14EC3700CAF239 /* Rainbow.framework */; };
-		66EA15771D14EC4300CAF239 /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15711D14EC3500CAF239 /* CommandLine.framework */; };
-		66EA15781D14EC4500CAF239 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15731D14EC3700CAF239 /* Rainbow.framework */; };
-		66EA15791D14EC4900CAF239 /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15711D14EC3500CAF239 /* CommandLine.framework */; };
-		66EA157A1D14EC4B00CAF239 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15731D14EC3700CAF239 /* Rainbow.framework */; };
-		66EA157B1D14EC5100CAF239 /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15711D14EC3500CAF239 /* CommandLine.framework */; };
-		66EA157C1D14EC5300CAF239 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15731D14EC3700CAF239 /* Rainbow.framework */; };
-		66EA157D1D14EC5600CAF239 /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15711D14EC3500CAF239 /* CommandLine.framework */; };
-		66EA157E1D14EC5800CAF239 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15731D14EC3700CAF239 /* Rainbow.framework */; };
-		66EA157F1D14EC5B00CAF239 /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15711D14EC3500CAF239 /* CommandLine.framework */; };
-		66EA15801D14EC5D00CAF239 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15731D14EC3700CAF239 /* Rainbow.framework */; };
-		66EA15811D14EC6500CAF239 /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15711D14EC3500CAF239 /* CommandLine.framework */; };
-		66EA15821D14EC6700CAF239 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15731D14EC3700CAF239 /* Rainbow.framework */; };
-		66EA15831D14EC6B00CAF239 /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15711D14EC3500CAF239 /* CommandLine.framework */; };
-		66EA15841D14EC6C00CAF239 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15731D14EC3700CAF239 /* Rainbow.framework */; };
-		66EA15851D14EC7100CAF239 /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15711D14EC3500CAF239 /* CommandLine.framework */; };
-		66EA15861D14EC7200CAF239 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EA15731D14EC3700CAF239 /* Rainbow.framework */; };
+		6608F9EC1D15FC57007D2431 /* libRainbow.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 665320861D15FC05004F107A /* libRainbow.dylib */; };
+		6608F9ED1D15FC5E007D2431 /* libCommandLine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 665320841D15FC01004F107A /* libCommandLine.dylib */; };
+		6608F9EE1D15FC5E007D2431 /* libRainbow.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 665320861D15FC05004F107A /* libRainbow.dylib */; };
+		6608F9EF1D15FC62007D2431 /* libCommandLine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 665320841D15FC01004F107A /* libCommandLine.dylib */; };
+		6608F9F01D15FC62007D2431 /* libRainbow.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 665320861D15FC05004F107A /* libRainbow.dylib */; };
+		6608F9F11D15FC65007D2431 /* libCommandLine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 665320841D15FC01004F107A /* libCommandLine.dylib */; };
+		6608F9F21D15FC65007D2431 /* libRainbow.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 665320861D15FC05004F107A /* libRainbow.dylib */; };
+		6608F9F31D15FC67007D2431 /* libCommandLine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 665320841D15FC01004F107A /* libCommandLine.dylib */; };
+		6608F9F41D15FC67007D2431 /* libRainbow.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 665320861D15FC05004F107A /* libRainbow.dylib */; };
+		6608F9F51D15FC69007D2431 /* libCommandLine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 665320841D15FC01004F107A /* libCommandLine.dylib */; };
+		6608F9F61D15FC69007D2431 /* libRainbow.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 665320861D15FC05004F107A /* libRainbow.dylib */; };
+		6608F9F71D15FC6B007D2431 /* libCommandLine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 665320841D15FC01004F107A /* libCommandLine.dylib */; };
+		6608F9F81D15FC6B007D2431 /* libRainbow.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 665320861D15FC05004F107A /* libRainbow.dylib */; };
+		6608F9F91D15FC6D007D2431 /* libCommandLine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 665320841D15FC01004F107A /* libCommandLine.dylib */; };
+		6608F9FA1D15FC6D007D2431 /* libRainbow.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 665320861D15FC05004F107A /* libRainbow.dylib */; };
+		6608F9FB1D15FC70007D2431 /* libCommandLine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 665320841D15FC01004F107A /* libCommandLine.dylib */; };
+		6608F9FC1D15FC70007D2431 /* libRainbow.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 665320861D15FC05004F107A /* libRainbow.dylib */; };
+		6608F9FD1D15FC73007D2431 /* libCommandLine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 665320841D15FC01004F107A /* libCommandLine.dylib */; };
+		6608F9FE1D15FC73007D2431 /* libRainbow.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 665320861D15FC05004F107A /* libRainbow.dylib */; };
+		6608F9FF1D15FC76007D2431 /* libCommandLine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 665320841D15FC01004F107A /* libCommandLine.dylib */; };
+		6608FA001D15FC76007D2431 /* libRainbow.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 665320861D15FC05004F107A /* libRainbow.dylib */; };
+		665320851D15FC01004F107A /* libCommandLine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 665320841D15FC01004F107A /* libCommandLine.dylib */; };
+		665320871D15FC05004F107A /* libRainbow.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 665320861D15FC05004F107A /* libRainbow.dylib */; };
+		665320881D15FC0C004F107A /* libCommandLine.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 665320841D15FC01004F107A /* libCommandLine.dylib */; };
 		66FFEEF81D14CF0C008F2119 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEEE41D14CF07008F2119 /* Formatter.swift */; };
 		66FFEEF91D14CF18008F2119 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEEDF1D14CF07008F2119 /* main.swift */; };
 		66FFEEFA1D14CF1B008F2119 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FFEEE11D14CF07008F2119 /* main.swift */; };
@@ -159,12 +159,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		66EA15691D14EC0B00CAF239 /* CommandLine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CommandLine.framework; path = ../lib/build/Debug/CommandLine.framework; sourceTree = "<group>"; };
-		66EA156B1D14EC0D00CAF239 /* Rainbow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rainbow.framework; path = ../lib/build/Debug/Rainbow.framework; sourceTree = "<group>"; };
-		66EA156D1D14EC1000CAF239 /* CommandLine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CommandLine.framework; path = ../lib/build/Debug/CommandLine.framework; sourceTree = "<group>"; };
-		66EA156F1D14EC1200CAF239 /* Rainbow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rainbow.framework; path = ../lib/build/Debug/Rainbow.framework; sourceTree = "<group>"; };
-		66EA15711D14EC3500CAF239 /* CommandLine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CommandLine.framework; path = "../../../Library/Developer/Xcode/DerivedData/coreutils-swift-fqkkbsxfufptwqcgfeevxcodvjah/Build/Products/Debug/CommandLine.framework"; sourceTree = "<group>"; };
-		66EA15731D14EC3700CAF239 /* Rainbow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rainbow.framework; path = "../../../Library/Developer/Xcode/DerivedData/coreutils-swift-fqkkbsxfufptwqcgfeevxcodvjah/Build/Products/Debug/Rainbow.framework"; sourceTree = "<group>"; };
+		665320841D15FC01004F107A /* libCommandLine.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCommandLine.dylib; path = "../../../Library/Developer/Xcode/DerivedData/coreutils-swift-fqkkbsxfufptwqcgfeevxcodvjah/Build/Products/Debug/libCommandLine.dylib"; sourceTree = "<group>"; };
+		665320861D15FC05004F107A /* libRainbow.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libRainbow.dylib; path = "../../../Library/Developer/Xcode/DerivedData/coreutils-swift-fqkkbsxfufptwqcgfeevxcodvjah/Build/Products/Debug/libRainbow.dylib"; sourceTree = "<group>"; };
 		66FFEE391D14CAFE008F2119 /* ls */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ls; sourceTree = BUILT_PRODUCTS_DIR; };
 		66FFEE481D14CC33008F2119 /* echo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = echo; sourceTree = BUILT_PRODUCTS_DIR; };
 		66FFEE531D14CC3E008F2119 /* env */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = env; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,8 +187,6 @@
 		66FFEEF31D14CF07008F2119 /* WCOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCOptions.swift; sourceTree = "<group>"; };
 		66FFEEF51D14CF07008F2119 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		66FFEEF71D14CF07008F2119 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		66FFEF981D14D277008F2119 /* libCommandLine.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCommandLine.dylib; path = "../../../Library/Developer/Xcode/DerivedData/coreutils-swift-fqkkbsxfufptwqcgfeevxcodvjah/Build/Products/Debug/libCommandLine.dylib"; sourceTree = "<group>"; };
-		66FFEF991D14D277008F2119 /* libRainbow.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libRainbow.dylib; path = "../../../Library/Developer/Xcode/DerivedData/coreutils-swift-fqkkbsxfufptwqcgfeevxcodvjah/Build/Products/Debug/libRainbow.dylib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,8 +194,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66EA15751D14EC3C00CAF239 /* CommandLine.framework in Frameworks */,
-				66EA15761D14EC3D00CAF239 /* Rainbow.framework in Frameworks */,
+				6608F9EF1D15FC62007D2431 /* libCommandLine.dylib in Frameworks */,
+				6608F9F01D15FC62007D2431 /* libRainbow.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,8 +203,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66EA156E1D14EC1000CAF239 /* CommandLine.framework in Frameworks */,
-				66EA15701D14EC1200CAF239 /* Rainbow.framework in Frameworks */,
+				665320851D15FC01004F107A /* libCommandLine.dylib in Frameworks */,
+				665320871D15FC05004F107A /* libRainbow.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,8 +212,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66EA156A1D14EC0B00CAF239 /* CommandLine.framework in Frameworks */,
-				66EA156C1D14EC0D00CAF239 /* Rainbow.framework in Frameworks */,
+				665320881D15FC0C004F107A /* libCommandLine.dylib in Frameworks */,
+				6608F9EC1D15FC57007D2431 /* libRainbow.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,8 +221,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66EA15721D14EC3500CAF239 /* CommandLine.framework in Frameworks */,
-				66EA15741D14EC3700CAF239 /* Rainbow.framework in Frameworks */,
+				6608F9ED1D15FC5E007D2431 /* libCommandLine.dylib in Frameworks */,
+				6608F9EE1D15FC5E007D2431 /* libRainbow.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,8 +230,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66EA157D1D14EC5600CAF239 /* CommandLine.framework in Frameworks */,
-				66EA157E1D14EC5800CAF239 /* Rainbow.framework in Frameworks */,
+				6608F9F71D15FC6B007D2431 /* libCommandLine.dylib in Frameworks */,
+				6608F9F81D15FC6B007D2431 /* libRainbow.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,8 +239,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66EA15771D14EC4300CAF239 /* CommandLine.framework in Frameworks */,
-				66EA15781D14EC4500CAF239 /* Rainbow.framework in Frameworks */,
+				6608F9F11D15FC65007D2431 /* libCommandLine.dylib in Frameworks */,
+				6608F9F21D15FC65007D2431 /* libRainbow.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,8 +248,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66EA15791D14EC4900CAF239 /* CommandLine.framework in Frameworks */,
-				66EA157A1D14EC4B00CAF239 /* Rainbow.framework in Frameworks */,
+				6608F9F31D15FC67007D2431 /* libCommandLine.dylib in Frameworks */,
+				6608F9F41D15FC67007D2431 /* libRainbow.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,8 +257,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66EA157B1D14EC5100CAF239 /* CommandLine.framework in Frameworks */,
-				66EA157C1D14EC5300CAF239 /* Rainbow.framework in Frameworks */,
+				6608F9F51D15FC69007D2431 /* libCommandLine.dylib in Frameworks */,
+				6608F9F61D15FC69007D2431 /* libRainbow.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,8 +266,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66EA157F1D14EC5B00CAF239 /* CommandLine.framework in Frameworks */,
-				66EA15801D14EC5D00CAF239 /* Rainbow.framework in Frameworks */,
+				6608F9F91D15FC6D007D2431 /* libCommandLine.dylib in Frameworks */,
+				6608F9FA1D15FC6D007D2431 /* libRainbow.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,8 +275,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66EA15831D14EC6B00CAF239 /* CommandLine.framework in Frameworks */,
-				66EA15841D14EC6C00CAF239 /* Rainbow.framework in Frameworks */,
+				6608F9FD1D15FC73007D2431 /* libCommandLine.dylib in Frameworks */,
+				6608F9FE1D15FC73007D2431 /* libRainbow.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,8 +284,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66EA15851D14EC7100CAF239 /* CommandLine.framework in Frameworks */,
-				66EA15861D14EC7200CAF239 /* Rainbow.framework in Frameworks */,
+				6608F9FF1D15FC76007D2431 /* libCommandLine.dylib in Frameworks */,
+				6608FA001D15FC76007D2431 /* libRainbow.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,14 +293,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66EA15811D14EC6500CAF239 /* CommandLine.framework in Frameworks */,
-				66EA15821D14EC6700CAF239 /* Rainbow.framework in Frameworks */,
+				6608F9FB1D15FC70007D2431 /* libCommandLine.dylib in Frameworks */,
+				6608F9FC1D15FC70007D2431 /* libRainbow.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		665320831D15FC01004F107A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				665320861D15FC05004F107A /* libRainbow.dylib */,
+				665320841D15FC01004F107A /* libCommandLine.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		66FFEE2B1D14CAC3008F2119 = {
 			isa = PBXGroup;
 			children = (
@@ -324,7 +327,7 @@
 				66FFEEF11D14CF07008F2119 /* wc */,
 				66FFEEF41D14CF07008F2119 /* whoami */,
 				66FFEE3A1D14CAFE008F2119 /* Products */,
-				66FFEF971D14D277008F2119 /* Frameworks */,
+				665320831D15FC01004F107A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -442,21 +445,6 @@
 				66FFEEF71D14CF07008F2119 /* main.swift */,
 			);
 			path = yes;
-			sourceTree = "<group>";
-		};
-		66FFEF971D14D277008F2119 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				66EA15731D14EC3700CAF239 /* Rainbow.framework */,
-				66EA15711D14EC3500CAF239 /* CommandLine.framework */,
-				66EA156F1D14EC1200CAF239 /* Rainbow.framework */,
-				66EA156D1D14EC1000CAF239 /* CommandLine.framework */,
-				66EA156B1D14EC0D00CAF239 /* Rainbow.framework */,
-				66EA15691D14EC0B00CAF239 /* CommandLine.framework */,
-				66FFEF981D14D277008F2119 /* libCommandLine.dylib */,
-				66FFEF991D14D277008F2119 /* libRainbow.dylib */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -882,16 +870,16 @@
 		66FFEE301D14CAC3008F2119 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				CODE_SIGN_IDENTITY = "";
+				LD_RUNPATH_SEARCH_PATHS = "@executale_path/../Frameworks";
 			};
 			name = Debug;
 		};
 		66FFEE311D14CAC3008F2119 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				CODE_SIGN_IDENTITY = "";
+				LD_RUNPATH_SEARCH_PATHS = "@executale_path/../Frameworks";
 			};
 			name = Release;
 		};
@@ -1000,7 +988,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "$(inherited)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1047,7 +1035,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "$(inherited)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1086,7 +1074,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "$(inherited)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1133,7 +1121,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "$(inherited)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1172,7 +1160,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "$(inherited)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1219,7 +1207,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "$(inherited)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
