@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		661641031D1765F200617D7B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661641021D1765F200617D7B /* main.swift */; };
 		66E032191D16533600C52B4E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E031DA1D164C7500C52B4E /* main.swift */; };
 		66E0321A1D16533A00C52B4E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E031D81D164C7500C52B4E /* main.swift */; };
 		66E0321B1D16533D00C52B4E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E031D51D164C7500C52B4E /* main.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		661641021D1765F200617D7B /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		66E031A61D164C7400C52B4E /* CONTRIBUTING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
 		66E031A91D164C7400C52B4E /* CommandLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
 		66E031AA1D164C7400C52B4E /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		661641011D1765F200617D7B /* cat */ = {
+			isa = PBXGroup;
+			children = (
+				661641021D1765F200617D7B /* main.swift */,
+			);
+			path = cat;
+			sourceTree = "<group>";
+		};
 		66C3D3011D164C0D00744E5F = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +163,7 @@
 		66E031BD1D164C7400C52B4E /* src */ = {
 			isa = PBXGroup;
 			children = (
+				661641011D1765F200617D7B /* cat */,
 				66E0320B1D1652C400C52B4E /* date */,
 				66E032361D1656DD00C52B4E /* domainname */,
 				66E031BE1D164C7400C52B4E /* echo */,
@@ -388,6 +399,7 @@
 				66E0321F1D16534700C52B4E /* main.swift in Sources */,
 				66E032211D16534D00C52B4E /* main.swift in Sources */,
 				66E0322F1D16536F00C52B4E /* String+Rainbow.swift in Sources */,
+				661641031D1765F200617D7B /* main.swift in Sources */,
 				66E0322C1D16536F00C52B4E /* ModesExtractor.swift in Sources */,
 				66E032321D16536F00C52B4E /* XcodeColorsSupport.swift in Sources */,
 				66F1FD061D172DA600CEEF5C /* main.swift in Sources */,

@@ -15,7 +15,6 @@
  * limitations under the License.
  */
 
-import Foundation
 /* Required for setlocale(3) */
 #if os(OSX)
   import Darwin
@@ -569,7 +568,7 @@ public class CommandLine {
       let format = formatOutput != nil ? formatOutput! : defaultFormat
 
       let name = _arguments[0]
-      print(format("Usage: \(name) [options]", .About), terminator: "", toStream: &to)
+      print(format("Usage: \(name) [OPTIONS]", .About), terminator: "", toStream: &to)
 
       for opt in _options {
         print(format(opt.flagDescription, .OptionFlag), terminator: "", toStream: &to)

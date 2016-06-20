@@ -13,6 +13,7 @@ It is dependent on the `Foundation` Swift module
 ## Commands that we have worked on
 | Tool          | Completion    |
 | ------------- | ------------- |
+| cat           | 25 %          |
 | date          | 25 %          |
 | domainname    | **Done**      |
 | echo          | **Done**      |
