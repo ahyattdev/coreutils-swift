@@ -53,5 +53,59 @@ if help.value {
     cli.printUsage()
     exit(EXIT_SUCCESS)
 } else if Process.arguments.count == 1 {
+    // TODO: Implement reading from stdin
+    print(error: "Reading from stdin has not been implemented yet")
+    exit(EXIT_FAILURE)
+}
+
+func number(contents: String, countBlanks: Bool) -> String {
+    let lines = contents.components(separatedBy: CharacterSet.newlines)
+    var lineCount = 0
+    var numberedContents = ""
+    for fileLine in lines {
+        var line = fileLine
+        if !line.isEmpty || countBlanks {
+            lineCount += 1
+            line = "    \(lineCount)  " + line
+        }
+        numberedContents += line + "\n"
+    }
+    return numberedContents
+}
+
+func parse(string: String) -> String {
+    var parsedString = string
+    // Put the stuff identifying non-printing characters before the numbering
+    if numberWithoutBlanks.value {
+        parsedString = number(contents: parsedString, countBlanks: false)
+    } else if number.value {
+        parsedString = number(contents: parsedString, countBlanks: true)
+    }
     
+    return parsedString
+}
+
+let files = cli.unparsedArguments
+
+for file in files {
+    var isDirectory: ObjCBool = false
+    if !FileManager.default().fileExists(atPath: file, isDirectory: &isDirectory) {
+        print(error: "File does not exist: \(file.lightRed)")
+        exit(EXIT_FAILURE)
+    } else if isDirectory {
+        print(error: "The path specified is a directory: \(file.lightRed)")
+        exit(EXIT_FAILURE)
+    } else if !FileManager.default().isReadableFile(atPath: file) {
+        print(error: "File is not readable: \(file.lightRed)")
+        exit(EXIT_FAILURE)
+    }
+    do {
+        let fileContent = try String(contentsOfFile: file)
+        let parsedContent = parse(string: fileContent)
+        // Do not print an extra line at the end
+        print(parsedContent, terminator: "")
+    } catch {
+        print(error: "An unknown error occured: \(file.lightRed)")
+        exit(EXIT_FAILURE)
+    }
 }
