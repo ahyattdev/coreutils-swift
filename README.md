@@ -19,6 +19,7 @@ It is dependent on the `Foundation` Swift module
 | echo          | **Done**      |
 | env           | **Done**      |
 | false         | **Done**      |
+| hostname      | **Done**      |
 | ls            | 25 %          |
 | mkdir         | 75 %          |
 | pwd           | **Done**      |

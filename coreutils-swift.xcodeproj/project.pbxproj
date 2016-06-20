@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		661641031D1765F200617D7B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661641021D1765F200617D7B /* main.swift */; };
+		661641061D178E1D00617D7B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661641051D178E1D00617D7B /* main.swift */; };
 		66E032191D16533600C52B4E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E031DA1D164C7500C52B4E /* main.swift */; };
 		66E0321A1D16533A00C52B4E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E031D81D164C7500C52B4E /* main.swift */; };
 		66E0321B1D16533D00C52B4E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E031D51D164C7500C52B4E /* main.swift */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		661641021D1765F200617D7B /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		661641051D178E1D00617D7B /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		66E031A61D164C7400C52B4E /* CONTRIBUTING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
 		66E031A91D164C7400C52B4E /* CommandLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
 		66E031AA1D164C7400C52B4E /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
@@ -109,6 +111,14 @@
 				661641021D1765F200617D7B /* main.swift */,
 			);
 			path = cat;
+			sourceTree = "<group>";
+		};
+		661641041D178E1D00617D7B /* hostname */ = {
+			isa = PBXGroup;
+			children = (
+				661641051D178E1D00617D7B /* main.swift */,
+			);
+			path = hostname;
 			sourceTree = "<group>";
 		};
 		66C3D3011D164C0D00744E5F = {
@@ -170,6 +180,7 @@
 				66E031C01D164C7400C52B4E /* env */,
 				66E031C21D164C7400C52B4E /* false */,
 				66E031C41D164C7400C52B4E /* Formatter.swift */,
+				661641041D178E1D00617D7B /* hostname */,
 				66E031C51D164C7400C52B4E /* ls */,
 				66E031C71D164C7400C52B4E /* mkdir */,
 				66E031C91D164C7400C52B4E /* pwd */,
@@ -418,6 +429,7 @@
 				66E032191D16533600C52B4E /* main.swift in Sources */,
 				66E0321B1D16533D00C52B4E /* main.swift in Sources */,
 				66E032381D1656DD00C52B4E /* main.swift in Sources */,
+				661641061D178E1D00617D7B /* main.swift in Sources */,
 				66E032281D16536F00C52B4E /* BackgroundColor.swift in Sources */,
 				66E032301D16536F00C52B4E /* StringGenerator.swift in Sources */,
 				66E0322A1D16536F00C52B4E /* Color.swift in Sources */,
