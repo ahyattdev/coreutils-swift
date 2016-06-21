@@ -1,4 +1,4 @@
-import Darwin.C
+import Foundation
 import CommandLine
 import Rainbow
 
@@ -23,13 +23,13 @@ cli.formatOutput = { s, type in
     return cli.defaultFormat(s: str, type: type)
 }
 
-let numberWithoutBlanks = BoolOption(shortFlag: "b", helpMessage: "Number the non-blank output lines, starting at one")
+let fullDomain = BoolOption(shortFlag: "f", helpMessage: "Include domain information in the printed name. This is the default behavior.")
 
-let nonPrinting = BoolOption(shortFlag: "e", helpMessage: "Display non-printing characters (see the -v option), and display a dollar sign at the end of each line.)")
+let trimDomain = BoolOption(shortFlag: "s", helpMessage: "Trim off any domain information from the printed name.")
 
 let help = BoolOption(shortFlag: "h", longFlag: "help", helpMessage: "Display this help and exit")
 
-cli.addOptions(numberWithoutBlanks, nonPrinting, number, singleSpaced, nonPrintingWithTabs, displayOutputBuffering, nonPrintingVerbose, help)
+cli.addOptions(fullDomain, trimDomain, help)
 
 do {
     try cli.parse(strict: true)
@@ -40,31 +40,37 @@ do {
 
 if help.value {
     cli.printUsage()
-} else if Process.arguments.count == 2 {
-    // We should set the domain name if we are root
-    let domainName = Process.arguments[1]
-    if setdomainname(domainName, Int32(domainName.characters.count)) == -1 {
+} else if cli.unparsedArguments.count == 1 {
+    // We should set the host name if we are root
+    let hostName = Process.arguments[1]
+    if sethostname(hostName, Int32(hostName.characters.count)) == -1 {
         switch errno {
         case EPERM:
             print(error: "You must run this command as superuser.")
         case EINVAL:
-            // The setdomainname(3) does not list EINVAL, but it sets EINVAL if the given
-            // domain name is too long
-            print(error: "The given domain name is too long or is otherwise invalid")
+            // The sethostname(3) does not list EINVAL, but it sets EINVAL if the given
+            // host name is too long
+            print(error: "The given host name is too long or is otherwise invalid")
         default:
             print(error: "An unknown error occurred.")
         }
         exit(EXIT_FAILURE)
     }
-} else if Process.arguments.count == 1 {
+} else if cli.unparsedArguments.count == 0 {
     // We should print the host name
     var buf = [Int8]()
-    let returnVal = gethostname(&buf, MAXHOSTNAMELEN)
-    guard let hostName = String(validatingUTF8: buf) where returnVal == 0 else {
-        print(error: "Could not get the host name")
+    let returnVal = gethostname(&buf, Int(MAXHOSTNAMELEN))
+    guard var hostName = String(validatingUTF8: buf) where returnVal == 0 else {
+        print(error: "Could not get the host name.")
         exit(EXIT_FAILURE)
     }
-    print(hostName.lightGreen)
+    
+    if trimDomain.value {
+        let hostOnly = hostName.components(separatedBy: ".")[0]
+        print(hostOnly.lightGreen)
+    } else {
+        print(hostName.lightGreen)
+    }
 } else {
     // Specified 2 or more arguments
     cli.printUsage()
