@@ -1,9 +1,9 @@
 SWIFTC ?= xcrun -sdk macosx swiftc
 SWIFTFLAGS ?=
-DESTDIR ?=
+DESTDIR ?= /opt/coreutils-swift
 
 PWD = $(shell pwd)
-BUILD_ROOT ?= build
+BUILD_ROOT ?= build/
 BUILD_LIB_ROOT = $(BUILD_ROOT)/lib
 BUILD_BIN_ROOT = $(BUILD_ROOT)/bin
 
@@ -46,15 +46,17 @@ $(BUILD_BIN_ROOT)/%: $(LIB_PRODUCTS) src/*.swift src/%/*.swift
 	$(SWIFTFLAGS) \
 	src/*.swift src/$*/*.swift
 
-.PHONY: create-build-folder
-
 $(BUILD_FOLDERS):
 	mkdir -p $@
 
 clean:
 	rm -rf $(BUILD_ROOT)
 
-set-path:
-	export PATH=$(BUILD_BIN_ROOT):$(PATH)
+install: | all
+	sudo mkdir -p $(DESTDIR)
+	sudo chown -R $(shell whoami):staff $(DESTDIR)
+	cp -a build/* $(DESTDIR)
+	$(info Add PATH="$(DESTDIR)/bin:$$PATH" to ~/.bash_profile to use these utilities)
 
-install:
+uninstall:
+	sudo rm -r $(DESTDIR)
