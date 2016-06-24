@@ -23,11 +23,13 @@ class Formatter {
         //size.ws_row = 25
         //size.ws_col = 80
         
-        //var w = winsize()
+        var w = winsize()
         
-        //if ioctl(STDOUT_FILENO, 104, w) == 0 {
+        // Not imported for some reason
+        let TIOCGWINSZ = UInt(104)
+        if ioctl(STDOUT_FILENO, TIOCGWINSZ, w) == 0 {
             
-        //}
+        }
         
         var initialColumns = screenWidth
         if elements.count < initialColumns {

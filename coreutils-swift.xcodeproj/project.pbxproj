@@ -326,10 +326,11 @@
 			buildPhases = (
 			);
 			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "";
 			dependencies = (
 			);
 			name = "coreutils-swift";
-			passBuildSettingsInEnvironment = 1;
+			passBuildSettingsInEnvironment = 0;
 			productName = "coreutils-swift";
 		};
 /* End PBXLegacyTarget section */
@@ -588,6 +589,7 @@
 				6A503FFC1D1CBBB8004920DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

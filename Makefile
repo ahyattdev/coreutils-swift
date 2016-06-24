@@ -1,4 +1,6 @@
-SWIFTC ?= xcrun -sdk macosx swiftc
+TOOLCHAIN ?= org.swift.3020160620a
+SDK ?= macosx
+SWIFTC = xcrun --toolchain $(TOOLCHAIN) --sdk $(SDK) swiftc
 SWIFTFLAGS ?=
 DESTDIR ?= /opt/coreutils-swift
 
