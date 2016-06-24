@@ -1,11 +1,10 @@
-#if os(OSX) || os(iOS)
-    import Darwin
-#elseif os(Linux)
-    import Glibc
-#endif
-
+import Foundation
 import CommandLine
 import Rainbow
+
+func print(error: String) {
+    fputs("\(Process.arguments[0].yellow): \(error.red)\n", stderr)
+}
 
 let cli = CommandLine()
 
@@ -46,29 +45,13 @@ if help.value {
 
 var paths = cli.unparsedArguments
 
-if mode.value != nil {
-    // TODO: Implement permissions
-}
-
-// TODO: Implement creating parent directories
-
-var mask: mode_t = 0o0755
-var defaultMask = mode_t()
-umask(defaultMask)
-
-mask -= defaultMask
+let intermediateDirectories = parents.value
 
 for path in paths {
-    var st = stat()
-    if stat(path, &st) == -1 {
-        mkdir(path, mask)
-        if verbose.value {
-            print("\(Process.arguments[0]): Created directory: ".lightGreen + path.lightBlue)
-        }
-    } else {
-        fputs("\(Process.arguments[0]): Failed to create directory: \(path)".red.bold + "\n", stderr)
+    do {
+        try FileManager.default().createDirectory(atPath: path, withIntermediateDirectories: intermediateDirectories, attributes: nil)
+    } catch {
+        print(error: "Failed to create directory: \(path)")
         exit(EXIT_FAILURE)
     }
 }
-
-exit(EXIT_SUCCESS)
