@@ -8,9 +8,9 @@ class Formatter {
     
     let paddingWidth = 2
     
-    var screenWidth = 80
-    
     var elements: [String]
+    
+    var screenWidth = -1
     
     init(elements: [String]) {
         self.elements = elements
@@ -25,10 +25,14 @@ class Formatter {
         
         var w = winsize()
         
-        // Not imported for some reason
-        let TIOCGWINSZ = UInt(104)
-        if ioctl(STDOUT_FILENO, TIOCGWINSZ, w) == 0 {
-            
+        // Not imported from C, this is what it is at compile time
+        // with the macOS 10.12 SDK targeting x86_64
+        let TIOCGWINSZ = UInt(1074295912)
+        
+        if ioctl(STDOUT_FILENO, TIOCGWINSZ, &w) < 0 {
+            screenWidth = 40
+        } else {
+            screenWidth = Int(w.ws_col)
         }
         
         var initialColumns = screenWidth
