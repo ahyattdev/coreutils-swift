@@ -17,14 +17,17 @@ class Formatter {
     }
     
     func columnsRepresentation() -> String {
-        
-        print("wew")
-        
         // With Swift 3 we will be able to use ioctl()
         // It is a variadic function and Swift 2.2 does not support it
         //var size: winsize = winsize()
         //size.ws_row = 25
         //size.ws_col = 80
+        
+        //var w = winsize()
+        
+        //if ioctl(STDOUT_FILENO, 104, w) == 0 {
+            
+        //}
         
         var initialColumns = screenWidth
         if elements.count < initialColumns {

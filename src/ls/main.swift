@@ -1,6 +1,3 @@
-// FIXME: Implement ls without Foundation
-#if !os(Linux)
-
 import Foundation
 import CommandLine
 import Rainbow
@@ -64,7 +61,7 @@ func list(path: String) {
         print(formatter.columnsRepresentation())
     } catch {
         print("error getting contents of directory")
-        exit(2)
+        exit(EXIT_FAILURE)
     }
 }
 
@@ -120,6 +117,3 @@ for path in listPaths {
     }
 }
 
-exit(EXIT_SUCCESS)
-
-#endif
