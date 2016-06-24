@@ -72,7 +72,7 @@
 		66E031B81D164C7400C52B4E /* StringGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringGenerator.swift; sourceTree = "<group>"; };
 		66E031B91D164C7400C52B4E /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		66E031BA1D164C7400C52B4E /* XcodeColorsSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XcodeColorsSupport.swift; sourceTree = "<group>"; };
-		66E031BB1D164C7400C52B4E /* Makefile */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; fileEncoding = 4; path = Makefile; sourceTree = "<group>"; };
+		66E031BB1D164C7400C52B4E /* Makefile */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; fileEncoding = 4; path = Makefile; sourceTree = "<group>"; usesTabs = 1; };
 		66E031BC1D164C7400C52B4E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		66E031BF1D164C7400C52B4E /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		66E031C11D164C7400C52B4E /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -319,18 +319,17 @@
 /* End PBXGroup section */
 
 /* Begin PBXLegacyTarget section */
-		66C3D3061D164C0D00744E5F /* coreutils-swift */ = {
+		6A503FF91D1CBBB8004920DE /* coreutils-swift */ = {
 			isa = PBXLegacyTarget;
 			buildArgumentsString = "$(ACTION)";
-			buildConfigurationList = 66C3D3091D164C0D00744E5F /* Build configuration list for PBXLegacyTarget "coreutils-swift" */;
+			buildConfigurationList = 6A503FFA1D1CBBB8004920DE /* Build configuration list for PBXLegacyTarget "coreutils-swift" */;
 			buildPhases = (
 			);
 			buildToolPath = /usr/bin/make;
-			buildWorkingDirectory = "";
 			dependencies = (
 			);
 			name = "coreutils-swift";
-			passBuildSettingsInEnvironment = 0;
+			passBuildSettingsInEnvironment = 1;
 			productName = "coreutils-swift";
 		};
 /* End PBXLegacyTarget section */
@@ -363,13 +362,13 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Andrew Hyatt";
 				TargetAttributes = {
-					66C3D3061D164C0D00744E5F = {
+					66E032101D1652FE00C52B4E = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = TGZ526AV87;
 						DevelopmentTeamName = "Andrew Hyatt (Personal Team)";
 						ProvisioningStyle = Automatic;
 					};
-					66E032101D1652FE00C52B4E = {
+					6A503FF91D1CBBB8004920DE = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = TGZ526AV87;
 						DevelopmentTeamName = "Andrew Hyatt (Personal Team)";
@@ -389,7 +388,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				66C3D3061D164C0D00744E5F /* coreutils-swift */,
+				6A503FF91D1CBBB8004920DE /* coreutils-swift */,
 				66E032101D1652FE00C52B4E /* Dummy target for code completion */,
 			);
 		};
@@ -516,29 +515,6 @@
 			};
 			name = Release;
 		};
-		66C3D30A1D164C0D00744E5F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEBUGGING_SYMBOLS = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		66C3D30B1D164C0D00744E5F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		66E032171D1652FE00C52B4E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -557,6 +533,30 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		6A503FFB1D1CBBB8004920DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6A503FFC1D1CBBB8004920DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -572,15 +572,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		66C3D3091D164C0D00744E5F /* Build configuration list for PBXLegacyTarget "coreutils-swift" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				66C3D30A1D164C0D00744E5F /* Debug */,
-				66C3D30B1D164C0D00744E5F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		66E032161D1652FE00C52B4E /* Build configuration list for PBXNativeTarget "Dummy target for code completion" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -589,6 +580,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		6A503FFA1D1CBBB8004920DE /* Build configuration list for PBXLegacyTarget "coreutils-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A503FFB1D1CBBB8004920DE /* Debug */,
+				6A503FFC1D1CBBB8004920DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
