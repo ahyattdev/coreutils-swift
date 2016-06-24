@@ -3,11 +3,11 @@ SWIFTFLAGS ?=
 DESTDIR ?= /opt/coreutils-swift
 
 PWD = $(shell pwd)
-BUILD_ROOT ?= build/
+BUILD_ROOT ?= build
 BUILD_LIB_ROOT = $(BUILD_ROOT)/lib
 BUILD_BIN_ROOT = $(BUILD_ROOT)/bin
 
-BUILD_FOLDERS = $(BUILD_BIN_ROOT) $(BUILD_LIB_ROOT)
+BUILD_FOLDERS = $(BUILD_ROOT) $(BUILD_BIN_ROOT) $(BUILD_LIB_ROOT)
 
 LIBS = CommandLine Rainbow
 
