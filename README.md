@@ -28,6 +28,7 @@ It is dependent on the `Foundation` Swift module
 | sync          | **Done**      |
 | true          | **Done**      |
 | uname         | 90 %          |
+| uuidgen       | 75 %          |
 | wc            | 90 %          |
 | whoami        | **Done**      |
 | yes           | **Done**      |

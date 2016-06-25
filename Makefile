@@ -15,7 +15,7 @@ LIBS = CommandLine Rainbow
 
 LIB_PRODUCTS := $(LIBS:%=$(BUILD_LIB_ROOT)/lib%.dylib) $(LIBS:%=$(BUILD_LIB_ROOT)/%.swiftmodule) $(LIBS:%=$(BUILD_LIB_ROOT)/%.swiftdoc)
 
-BINARIES = ls whoami uname env sleep wc echo yes true false pwd mkdir date domainname sync cat hostname rmdir
+BINARIES = ls whoami uname env sleep wc echo yes true false pwd mkdir date domainname sync cat hostname rmdir uuidgen
 
 BIN_PRODUCTS := $(BINARIES:%=$(BUILD_BIN_ROOT)/%)
 
@@ -62,3 +62,6 @@ install: | all
 
 uninstall:
 	sudo rm -r $(DESTDIR)
+
+help:
+	@echo "Usage: make [ all <path-to-library> <path-to-swiftmodule> <path-to-swiftdoc\> <path-to-binary> clean install uninstall help ]"
