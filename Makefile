@@ -55,13 +55,13 @@ clean:
 	rm -rf $(BUILD_ROOT)
 
 install: | all
-	sudo mkdir -p $(DESTDIR)
-	sudo chown -R $(shell whoami):staff $(DESTDIR)
+	mkdir -p $(DESTDIR)
+	chown -R $(shell whoami):staff $(DESTDIR)
 	cp -a build/* $(DESTDIR)
 	$(info Add PATH="$(DESTDIR)/bin:$$PATH" to ~/.bash_profile to use these utilities)
 
 uninstall:
-	sudo rm -r $(DESTDIR)
+	rm -r $(DESTDIR)
 
 help:
 	@echo "Usage: make [ all <path-to-library> <path-to-swiftmodule> <path-to-swiftdoc\> <path-to-binary> clean install uninstall help ]"
