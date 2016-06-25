@@ -6,18 +6,18 @@ DESTDIR ?= /opt/coreutils-swift
 
 PWD = $(shell pwd)
 BUILD_ROOT ?= build
-BUILD_LIB_ROOT = $(BUILD_ROOT)/lib
-BUILD_BIN_ROOT = $(BUILD_ROOT)/bin
+BUILD_LIB_ROOT := $(BUILD_ROOT)/lib
+BUILD_BIN_ROOT := $(BUILD_ROOT)/bin
 
-BUILD_FOLDERS = $(BUILD_ROOT) $(BUILD_BIN_ROOT) $(BUILD_LIB_ROOT)
+BUILD_FOLDERS := $(BUILD_ROOT) $(BUILD_BIN_ROOT) $(BUILD_LIB_ROOT)
 
 LIBS = CommandLine Rainbow
 
-LIB_PRODUCTS = $(LIBS:%=$(BUILD_LIB_ROOT)/lib%.dylib) $(LIBS:%=$(BUILD_LIB_ROOT)/%.swiftmodule) $(LIBS:%=$(BUILD_LIB_ROOT)/%.swiftdoc)
+LIB_PRODUCTS := $(LIBS:%=$(BUILD_LIB_ROOT)/lib%.dylib) $(LIBS:%=$(BUILD_LIB_ROOT)/%.swiftmodule) $(LIBS:%=$(BUILD_LIB_ROOT)/%.swiftdoc)
 
-BINARIES = ls whoami uname env sleep wc echo yes true false pwd mkdir date domainname sync cat hostname
+BINARIES = ls whoami uname env sleep wc echo yes true false pwd mkdir date domainname sync cat hostname rmdir
 
-BIN_PRODUCTS = $(BINARIES:%=$(BUILD_BIN_ROOT)/%)
+BIN_PRODUCTS := $(BINARIES:%=$(BUILD_BIN_ROOT)/%)
 
 all: $(LIB_PRODUCTS) $(BIN_PRODUCTS)
 

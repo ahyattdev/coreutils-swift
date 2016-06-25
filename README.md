@@ -23,6 +23,7 @@ It is dependent on the `Foundation` Swift module
 | ls            | 25 %          |
 | mkdir         | 75 %          |
 | pwd           | **Done**      |
+| rmdir         | 50 %          |
 | sleep         | **Done**      |
 | sync          | **Done**      |
 | true          | **Done**      |
