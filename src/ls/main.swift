@@ -58,7 +58,7 @@ func list(path: String) {
 
         let formatter = Formatter(elements: contents)
 
-        print(formatter.columnsRepresentation())
+        print(formatter.columnsRepresentation(), terminator: "")
     } catch {
         print("error getting contents of directory")
         exit(EXIT_FAILURE)
