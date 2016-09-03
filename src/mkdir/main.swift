@@ -3,7 +3,7 @@ import CommandLine
 import Rainbow
 
 func print(error: String) {
-    fputs("\(Process.arguments[0].yellow): \(error.red)\n", stderr)
+    fputs("\(Process().arguments![0].yellow): \(error.red)\n", stderr)
 }
 
 let cli = CommandLine()
@@ -12,7 +12,7 @@ cli.formatOutput = { s, type in
     var str: String
     switch(type) {
     case .About:
-        str = "Usage: \(Process.arguments[0]) [OPTION]... [DIRECTORY]...".lightCyan + "\n\nMakes directories at the given paths".yellow
+        str = "Usage: \(Process().arguments![0]) [OPTION]... [DIRECTORY]...".lightCyan + "\n\nMakes directories at the given paths".yellow
     case .Error:
         str = s.red.bold
     case .OptionFlag:
@@ -49,7 +49,7 @@ let intermediateDirectories = parents.value
 
 for path in paths {
     do {
-        try FileManager.default().createDirectory(atPath: path, withIntermediateDirectories: intermediateDirectories, attributes: nil)
+        try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: intermediateDirectories, attributes: nil)
     } catch {
         print(error: "Failed to create directory: \(path)")
         exit(EXIT_FAILURE)

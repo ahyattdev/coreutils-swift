@@ -2,7 +2,7 @@ import Foundation
 import CommandLine
 import Rainbow
 
-let fm = FileManager.default()
+let fm = FileManager.default
 
 enum Mode {
     case Auto
@@ -104,7 +104,7 @@ for path in listPaths {
 for path in listPaths {
     var isDirectory: ObjCBool = false
     fm.fileExists(atPath: path, isDirectory: &isDirectory)
-    if isDirectory {
+    if isDirectory.boolValue {
         if listPaths.count > 1 {
             print(fm.displayName(atPath: path) + ":")
         }

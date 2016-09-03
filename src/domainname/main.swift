@@ -3,7 +3,7 @@ import CommandLine
 import Rainbow
 
 func print(error: String) {
-    fputs("\(Process.arguments[0].yellow): \(error.red)\n", stderr)
+    fputs("\(Process().arguments![0].yellow): \(error.red)\n", stderr)
 }
 
 let cli = CommandLine()
@@ -38,9 +38,9 @@ do {
 // These argument counts include how the command was launched
 if help.value {
     cli.printUsage()
-} else if Process.arguments.count == 2 {
+} else if Process().arguments!.count == 2 {
     // We should set the domain name if we are root
-    let domainName = Process.arguments[1]
+    let domainName = Process().arguments![1]
     if setdomainname(domainName, Int32(domainName.characters.count)) == -1 {
         switch errno {
         case EPERM:
@@ -54,11 +54,14 @@ if help.value {
         }
         exit(EXIT_FAILURE)
     }
-} else if Process.arguments.count == 1 {
+} else if Process().arguments!.count == 1 {
     // We should print the domain name
     var buf = [Int8]()
     let returnVal = getdomainname(&buf, MAXDOMNAMELEN)
-    guard let domainName = String(validatingUTF8: buf) where returnVal == 0 else {
+    if returnVal != 0 {
+        exit(EXIT_FAILURE)
+    }
+    guard let domainName = String(validatingUTF8: buf) else {
         fputs("\("Could not get the domain name".red)\n", stderr)
         exit(EXIT_FAILURE)
     }

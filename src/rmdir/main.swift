@@ -3,7 +3,7 @@ import CommandLine
 import Rainbow
 
 func print(error: String) {
-    fputs("\(Process.arguments[0].yellow): \(error.red)\n", stderr)
+    fputs("\(Process().arguments![0].yellow): \(error.red)\n", stderr)
 }
 
 let cli = CommandLine()
@@ -42,7 +42,7 @@ if help.value {
 }
 
 let paths = cli.unparsedArguments
-let fm = FileManager.default()
+let fm = FileManager.default
 
 if paths.isEmpty {
     print(error: "You must specify a directory to remove")

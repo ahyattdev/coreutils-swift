@@ -73,7 +73,7 @@ func countNewlines(string: String) -> Int {
     return count
 }
 
-let fm = FileManager.default()
+let fm = FileManager.default
 
 WCOptions.ByteCount = byteCount.value
 WCOptions.CharCount = charCount.value

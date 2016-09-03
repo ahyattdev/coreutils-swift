@@ -3,7 +3,7 @@ import CommandLine
 import Rainbow
 
 func print(error: String) {
-    fputs("\(Process.arguments[0].yellow): \(error.red)\n", stderr)
+    fputs("\(Process().arguments![0].yellow): \(error.red)\n", stderr)
 }
 
 let cli = CommandLine()

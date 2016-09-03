@@ -53,7 +53,7 @@ if help.value {
 
 // Clear if necessary
 
-var envvars = ProcessInfo.processInfo().environment
+var envvars = ProcessInfo.processInfo.environment
 
 if Flags.Ignore {
     for var envvar in envvars {
@@ -80,7 +80,7 @@ for arg : String in cli.unparsedArguments {
 }
 
 // TODO: Sort them alphabetically
-for env in ProcessInfo.processInfo().environment {
+for env in ProcessInfo.processInfo.environment {
     var seperator = "\n"
     if Flags.Null {
         seperator = "\0"

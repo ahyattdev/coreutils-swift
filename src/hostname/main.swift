@@ -3,7 +3,7 @@ import CommandLine
 import Rainbow
 
 func print(error: String) {
-    fputs("\(Process.arguments[0].yellow): \(error.red)\n", stderr)
+    fputs("\(Process().arguments![0].yellow): \(error.red)\n", stderr)
 }
 let cli = CommandLine()
 
@@ -11,7 +11,7 @@ cli.formatOutput = { s, type in
     var str: String
     switch(type) {
     case .About:
-        str = "Usage: \(Process.arguments[0]) [OPTIONS] [FILE ...]".lightCyan + "\n\nConcatenate and print files\n".yellow
+        str = "Usage: \(Process().arguments![0]) [OPTIONS] [FILE ...]".lightCyan + "\n\nConcatenate and print files\n".yellow
     case .Error:
         str = s.red.bold
     case .OptionFlag:
@@ -42,7 +42,7 @@ if help.value {
     cli.printUsage()
 } else if cli.unparsedArguments.count == 1 {
     // We should set the host name if we are root
-    let hostName = Process.arguments[1]
+    let hostName = Process().arguments![1]
     if sethostname(hostName, Int32(hostName.characters.count)) == -1 {
         switch errno {
         case EPERM:
@@ -60,7 +60,10 @@ if help.value {
     // We should print the host name
     var buf = [Int8]()
     let returnVal = gethostname(&buf, Int(MAXHOSTNAMELEN))
-    guard var hostName = String(validatingUTF8: buf) where returnVal == 0 else {
+    if returnVal != 0 {
+        exit(EXIT_FAILURE)
+    }
+    guard var hostName = String(validatingUTF8: buf) else {
         print(error: "Could not get the host name.")
         exit(EXIT_FAILURE)
     }

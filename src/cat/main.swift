@@ -3,7 +3,7 @@ import CommandLine
 import Rainbow
 
 func print(error: String) {
-    fputs("\(Process.arguments[0].yellow): \(error.red)\n", stderr)
+    fputs("\(Process().arguments![0].yellow): \(error.red)\n", stderr)
 }
 let cli = CommandLine()
 
@@ -11,7 +11,7 @@ cli.formatOutput = { s, type in
     var str: String
     switch(type) {
     case .About:
-        str = "Usage: \(Process.arguments[0]) [OPTIONS] [FILE ...]".lightCyan + "\n\nConcatenate and print files\n".yellow
+        str = "Usage: \(Process().arguments![0]) [OPTIONS] [FILE ...]".lightCyan + "\n\nConcatenate and print files\n".yellow
     case .Error:
         str = s.red.bold
     case .OptionFlag:
@@ -52,7 +52,7 @@ do {
 if help.value {
     cli.printUsage()
     exit(EXIT_SUCCESS)
-} else if Process.arguments.count == 1 {
+} else if Process().arguments!.count == 1 {
     // TODO: Implement reading from stdin
     print(error: "Reading from stdin has not been implemented yet")
     exit(EXIT_FAILURE)
@@ -89,13 +89,13 @@ let files = cli.unparsedArguments
 
 for file in files {
     var isDirectory: ObjCBool = false
-    if !FileManager.default().fileExists(atPath: file, isDirectory: &isDirectory) {
+    if !FileManager.default.fileExists(atPath: file, isDirectory: &isDirectory) {
         print(error: "File does not exist: \(file.lightRed)")
         exit(EXIT_FAILURE)
-    } else if isDirectory {
+    } else if isDirectory.boolValue {
         print(error: "The path specified is a directory: \(file.lightRed)")
         exit(EXIT_FAILURE)
-    } else if !FileManager.default().isReadableFile(atPath: file) {
+    } else if !FileManager.default.isReadableFile(atPath: file) {
         print(error: "File is not readable: \(file.lightRed)")
         exit(EXIT_FAILURE)
     }
